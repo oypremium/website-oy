@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OYPREMIUM — App Premium & Kebsos</title>
+  <meta name="description" content="OYPREMIUM menjual App Premium dan layanan Kebsos dengan harga terbaik, proses cepat, dan support responsif." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="nav container">
+      <a class="brand" href="#home" aria-label="OYPREMIUM Home">
+        <span class="brand__logo">OY</span>
+        <span class="brand__name">OYPREMIUM</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" id="navMenu">
+        <a href="#produk">Produk</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small" href="#kontak">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero container">
+      <div class="hero__content">
+        
+        <h1>Jual <span class="grad">App Premium</span> & <span class="grad2">Kebsos</span> dengan proses cepat dan aman.</h1>
+        <p class="lead">
+          
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn" href="#pricing">Lihat Pricing</a>
+          <a class="btn btn--ghost" href="#kontak">Chat Admin</a>
+        </div>
+
+        <div class="trust">
+          <div class="trust__item">
+            <div class="trust__icon">⚡</div>
+            <div>
+              <div class="trust__title">Proses Cepat</div>
+              <div class="trust__desc">Rata-rata 5–30 menit</div>
+            </div>
+          </div>
+          <div class="trust__item">
+            <div class="trust__icon">🛡️</div>
+            <div>
+              <div class="trust__title">Aman & Terpercaya</div>
+              <div class="trust__desc">Garansi sesuai paket</div>
+            </div>
+          </div>
+          <div class="trust__item">
+            <div class="trust__icon">💬</div>
+            <div>
+              <div class="trust__title">Support</div>
+              <div class="trust__desc">Admin fast response</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__card" aria-label="Ringkasan layanan">
+        <div class="glass">
+          <h3>Ringkasan Layanan</h3>
+          <ul class="checklist">
+            <li>✅ App Premium (bulanan/tahunan)</li>
+            <li>✅ Kebsos IG/TikTok/YouTube</li>
+            <li>✅ Garansi (sesuai paket)</li>
+            <li>✅ Metode pembayaran fleksibel</li>
+          </ul>
+          <div class="hero__note">
+            <span>Tip:</span> Klik tombol “Pesan” di pricing untuk langsung ke WhatsApp.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section id="produk" class="section container">
+      <div class="section__head">
+        <h2>Produk Utama</h2>
+        <p>Pilih kategori layanan yang kamu butuhkan. Semua paket bisa custom.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="feature">
+          <div class="feature__top">
+            <div class="pill pill--blue">App Premium</div>
+            <h3>Akun & Subscription</h3>
+          </div>
+          <p>
+            Netflix, Spotify, Canva, YouTube Premium, dan lainnya.
+            Bisa family/shared/private (sesuai stok).
+          </p>
+          <ul class="mini">
+            <li>• Aktivasi cepat</li>
+            <li>• Panduan penggunaan</li>
+            <li>• Garansi sesuai paket</li>
+          </ul>
+          <a class="link" href="#pricing">Lihat paket →</a>
+        </article>
+
+        <article class="feature">
+          <div class="feature__top">
+            <div class="pill pill--purple">Kebsos</div>
+            <h3>Boost Sosial Media</h3>
+          </div>
+          <p>
+            Followers, likes, views, komentar untuk IG/TikTok/YouTube.
+            Ada pilihan fast / gradual.
+          </p>
+          <ul class="mini">
+            <li>• Delivery bertahap (opsional)</li>
+            <li>• Refill / garansi (opsional)</li>
+            <li>• Target sesuai kebutuhan</li>
+          </ul>
+          <a class="link" href="#pricing">Lihat paket →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section container">
+      <div class="section__head">
+        <h2>Pricing OYPREMIUM</h2>
+        <p>Contoh paket harga (silakan ubah sesuai produk kamu). Klik “Pesan” untuk chat admin.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Pilihan pricing">
+        <button class="tab is-active" data-tab="app" role="tab" aria-selected="true">App Premium</button>
+        <button class="tab" data-tab="kebsos" role="tab" aria-selected="false">Kebsos</button>
+      </div>
+
+      <!-- App Premium Cards -->
+      <div class="pricing is-active" id="tab-app" data-pane="app" role="tabpanel">
+        <div class="pricing__grid">
+          <article class="price-card">
+            <div class="price-card__head">
+              <h3>Basic</h3>
+              <p class="muted">Cocok untuk coba dulu</p>
+            </div>
+            <div class="price">
+              <span class="price__currency">Rp</span>
+              <span class="price__value">25K</span>
+              <span class="price__period">/bulan</span>
+            </div>
+            <ul class="list">
+              <li>1 App Premium pilihan</li>
+              <li>Aktivasi cepat</li>
+              <li>Support standard</li>
+            </ul>
+            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20App%20Basic.">Pesan</a>
+            <div class="fine">*Ganti nomor WhatsApp di link.</div>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="ribbon">Best Value</div>
+            <div class="price-card__head">
+              <h3>Pro</h3>
+              <p class="muted">Paling laris</p>
+            </div>
+            <div class="price">
+              <span class="price__currency">Rp</span>
+              <span class="price__value">59K</span>
+              <span class="price__period">/bulan</span>
+            </div>
+            <ul class="list">
+              <li>2 App Premium pilihan</li>
+              <li>Prioritas proses</li>
+              <li>Support cepat</li>
+              <li>Garansi sesuai paket</li>
+            </ul>
+            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20App%20Pro.">Pesan</a>
+            <div class="fine">*Ganti nomor WhatsApp di link.</div>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card__head">
+              <h3>Ultimate</h3>
+              <p class="muted">Untuk kebutuhan lengkap</p>
+            </div>
+            <div class="price">
+              <span class="price__currency">Rp</span>
+              <span class="price__value">99K</span>
+              <span class="price__period">/bulan</span>
+            </div>
+            <ul class="list">
+              <li>3 App Premium pilihan</li>
+              <li>Prioritas tertinggi</li>
+              <li>Support VIP</li>
+              <li>Bonus promo bulanan</li>
+            </ul>
+            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20App%20Ultimate.">Pesan</a>
+            <div class="fine">*Ganti nomor WhatsApp di link.</div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Kebsos Cards -->
+      <div class="pricing" id="tab-kebsos" data-pane="kebsos" role="tabpanel">
+        <div class="pricing__grid">
+          <article class="price-card">
+            <div class="price-card__head">
+              <h3>Starter</h3>
+              <p class="muted">Untuk pemula</p>
+            </div>
+            <div class="price">
+              <span class="price__currency">Rp</span>
+              <span class="price__value">15K</span>
+              <span class="price__period">/paket</span>
+            </div>
+            <ul class="list">
+              <li>Followers/likes basic</li>
+              <li>Proses standar</li>
+              <li>Estimasi 1–24 jam</li>
+            </ul>
+            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20Kebsos%20Starter.">Pesan</a>
+            <div class="fine">*Ganti nomor WhatsApp di link.</div>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="ribbon">Most Popular</div>
+            <div class="price-card__head">
+              <h3>Growth</h3>
+              <p class="muted">Kenaikan stabil</p>
+            </div>
+            <div class="price">
+              <span class="price__currency">Rp</span>
+              <span class="price__value">39K</span>
+              <span class="price__period">/paket</span>
+            </div>
+            <ul class="list">
+              <li>Delivery gradual (opsional)</li>
+              <li>Estimasi 1–12 jam</li>
+              <li>Support prioritas</li>
+              <li>Refill (opsional)</li>
+            </ul>
+            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20Kebsos%20Growth.">Pesan</a>
+            <div class="fine">*Ganti nomor WhatsApp di link.</div>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card__head">
+              <h3>Booster</h3>
+              <p class="muted">Untuk campaign</p>
+            </div>
+            <div class="price">
+              <span class="price__currency">Rp</span>
+              <span class="price__value">79K</span>
+              <span class="price__period">/paket</span>
+            </div>
+            <ul class="list">
+              <li>Speed lebih cepat</li>
+              <li>Estimasi 1–6 jam</li>
+              <li>Opsi target & segment</li>
+              <li>Support VIP</li>
+            </ul>
+            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20Kebsos%20Booster.">Pesan</a>
+            <div class="fine">*Ganti nomor WhatsApp di link.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan" class="section container">
+      <div class="section__head">
+        <h2>Kenapa OYPREMIUM?</h2>
+        <p>Kami fokus ke kualitas layanan dan pengalaman pembelian yang rapi.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Transparan</h3>
+          <p>Deskripsi paket jelas + estimasi proses. Tidak ada biaya tersembunyi.</p>
+        </div>
+        <div class="card">
+          <h3>Rapi & Profesional</h3>
+          <p>Order dicatat, progress diinformasikan, dan ada SOP support.</p>
+        </div>
+        <div class="card">
+          <h3>Fleksibel</h3>
+          <p>Paket bisa custom sesuai kebutuhan (bulk order, campaign, dll).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section container">
+      <div class="section__head">
+        <h2>FAQ</h2>
+        <p>Pertanyaan yang sering ditanyakan.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Berapa lama prosesnya?</summary>
+          <p>Tergantung paket dan antrean. Rata-rata 5–30 menit untuk aktivasi app, dan 1–24 jam untuk kebsos.</p>
+        </details>
+        <details>
+          <summary>Ada garansi?</summary>
+          <p>Ada untuk paket tertentu (misalnya refill atau garansi masa aktif). Detailnya tertulis di tiap paket.</p>
+        </details>
+        <details>
+          <summary>Bisa custom paket?</summary>
+          <p>Bisa. Chat admin di bagian kontak, jelaskan kebutuhan kamu.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section container">
+      <div class="contact">
+        <div>
+          <h2>Kontak Admin</h2>
+          <p class="muted">Isi form di bawah atau langsung klik tombol WhatsApp.</p>
+
+          <div class="contact__actions">
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20tanya%20paket.">WhatsApp</a>
+            <a class="btn btn--ghost" href="mailto:admin@oypremium.com">Email</a>
+          </div>
+
+          <div class="contact__info">
+            <div><span>Jam Operasional:</span> 09.00–22.00 WIB</div>
+            <div><span>Lokasi:</span> Online</div>
+          </div>
+        </div>
+
+        <form class="form" onsubmit="return sendWA(event)">
+          <div class="form__row">
+            <label>Nama</label>
+            <input id="nama" type="text" placeholder="Nama kamu" required />
+          </div>
+          <div class="form__row">
+            <label>Nomor WhatsApp</label>
+            <input id="wa" type="tel" placeholder="08xxxxxxxxxx" required />
+          </div>
+          <div class="form__row">
+            <label>Pesan</label>
+            <textarea id="pesan" rows="4" placeholder="Mau order apa? (App Premium/Kebsos) + detailnya" required></textarea>
+          </div>
+          <button class="btn btn--full" type="submit">Kirim ke WhatsApp</button>
+          <div class="fine">Form ini akan membuka chat WhatsApp dengan pesan otomatis.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="brand brand--footer">
+          <span class="brand__logo">OY</span>
+          <span class="brand__name">OYPREMIUM</span>
+        </div>
+        <p class="muted">App Premium & Kebsos • Cepat • Aman • Support</p>
+      </div>
+
+      <div class="footer__right">
+        <a href="#produk">Produk</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+    </div>
+    <div class="footer__bottom">© <span id="year"></span> OYPREMIUM. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Tahun otomatis
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const toggle = document.getElementById("navToggle");
+    const menu = document.getElementById("navMenu");
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }));
+
+    // Tabs pricing
+    const tabs = document.querySelectorAll(".tab");
+    const panes = document.querySelectorAll("[data-pane]");
+    tabs.forEach(t => t.addEventListener("click", () => {
+      tabs.forEach(x => x.classList.remove("is-active"));
+      t.classList.add("is-active");
+
+      const key = t.dataset.tab;
+      panes.forEach(p => p.classList.remove("is-active"));
+      document.querySelector(`#tab-${key}`).classList.add("is-active");
+
+      tabs.forEach(x => x.setAttribute("aria-selected", x === t ? "true" : "false"));
+    }));
+
+    // Form -> WhatsApp
+    function sendWA(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value.trim();
+      const wa = document.getElementById("wa").value.trim();
+      const pesan = document.getElementById("pesan").value.trim();
+
+      const nomorAdmin = "6280000000000"; // GANTI NOMOR ADMIN (format 62...)
+      const text = `Halo OYPREMIUM!\n\nNama: ${nama}\nWA: ${wa}\nPesan: ${pesan}`;
+      const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
+      return false;
+    }
+  </script>
+</body>
+</html>
