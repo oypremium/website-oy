@@ -421,3 +421,45 @@
     .nav__menu a{width:100%; text-align:center}
   }
   
+  .glass--logo{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 30px 22px;
+  }
+  
+  /* OY (animasi naik turun) */
+  .oy-float-text{
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+    
+    /* warna gradient mirip logo */
+    background: linear-gradient(90deg, #0b1b33, #d4a73a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: oyFloat 2.4s ease-in-out infinite;
+    will-change: transform;
+  }
+  
+  @keyframes oyFloat{
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-14px); }
+  }
+  
+  /* PREMIUM (diam) */
+  .premium-text{
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    opacity: 0.9;
+  }
+  
+  /* kalau user matiin animasi */
+  @media (prefers-reduced-motion: reduce){
+    .oy-float-text{ animation: none; }
+  }
+  
