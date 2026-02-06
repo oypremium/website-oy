@@ -26,7 +26,7 @@
 
       <div class="nav__menu" id="navMenu">
         <a href="#produk">Produk</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#pricing">Harga</a>
         <a href="#keunggulan">Keunggulan</a>
         <a href="#faq">FAQ</a>
         <a class="btn btn--small" href="#kontak">Kontak</a>
@@ -45,16 +45,16 @@
         </p>
 
         <div class="hero__cta">
-          <a class="btn" href="#pricing">Lihat Pricing</a>
+          <a class="btn" href="#pricing">Lihat Harga</a>
           <a class="btn btn--ghost" href="#kontak">Chat Admin</a>
         </div>
 
         <div class="trust">
           <div class="trust__item">
-            <div class="trust__icon">⚡</div>
+            <div class="trust__icon">💸</div>
             <div>
-              <div class="trust__title">Proses Cepat</div>
-              <div class="trust__desc">Rata-rata 5–30 menit</div>
+              <div class="trust__title">Harga Terjangkau</div>
+              <div class="trust__desc">Mulai dari 1K aja</div>
             </div>
           </div>
           <div class="trust__item">
@@ -75,16 +75,12 @@
       </div>
 
       <div class="hero__card" aria-label="Logo OYPREMIUM">
-        <div class="glass glass--logo">
+        <div class="logo-box">
+          <div class="oy-text oy-float oy-shine">OY</div>
           
-          <!-- OY (yang gerak) -->
-          <div class="oy-float-text">OY</div>
-      
-          <!-- PREMIUM (diam) -->
-          <div class="premium-text">PREMIUM</div>
-      
         </div>
       </div>
+      
       
     </section>
 
@@ -99,16 +95,16 @@
         <article class="feature">
           <div class="feature__top">
             <div class="pill pill--blue">App Premium</div>
-            <h3>Akun & Subscription</h3>
+            <h3>Akun premium</h3>
           </div>
           <p>
-            Netflix, Spotify, Canva, YouTube Premium, dan lainnya.
-            Bisa family/shared/private (sesuai stok).
+            YouTube Premium, Gemini AI PRO, Chatgpt dan lainnya.
+          
           </p>
           <ul class="mini">
-            <li>• Aktivasi cepat</li>
-            <li>• Panduan penggunaan</li>
-            <li>• Garansi sesuai paket</li>
+            <li>• Famhead/Famplan/Shared/Private</li>
+            <li>• Panduan Penggunaan </li>
+            <li>• FULL Bergaransi</li>
           </ul>
           <a class="link" href="#pricing">Lihat paket →</a>
         </article>
@@ -119,13 +115,13 @@
             <h3>Boost Sosial Media</h3>
           </div>
           <p>
-            Followers, likes, views, komentar untuk IG/TikTok/YouTube.
-            Ada pilihan fast / gradual.
+            Followers, likes, views, komentar untuk Instagram.
+            
           </p>
           <ul class="mini">
-            <li>• Delivery bertahap (opsional)</li>
-            <li>• Refill / garansi (opsional)</li>
-            <li>• Target sesuai kebutuhan</li>
+            <li>• Bisa Bayar Setelah followers masuk</li>
+            <li>• Bergaransi </li>
+            <li>• Proses Cepat</li>
           </ul>
           <a class="link" href="#pricing">Lihat paket →</a>
         </article>
@@ -134,9 +130,21 @@
 
     <!-- PRICING -->
     <section id="pricing" class="section container">
-      <div class="section__head">
-        <h2>Pricing OYPREMIUM</h2>
-        <p>Contoh paket harga (silakan ubah sesuai produk kamu). Klik “Pesan” untuk chat admin.</p>
+      <div class="section__head section__head--row">
+        <div>
+          <h2>Daftar App Prem & Kebsos</h2>
+        </div>
+      
+        <div class="pricing-search">
+          <span class="pricing-search__clear" id="pricingSearchClear" aria-label="Clear search">✕</span>
+
+          <input
+            id="pricingSearch"
+            type="text"
+            placeholder="Cari App Prem / Kebsos"
+            autocomplete="off"
+          />
+        </div>
       </div>
 
       <div class="tabs" role="tablist" aria-label="Pilihan pricing">
@@ -147,139 +155,321 @@
       <!-- App Premium Cards -->
       <div class="pricing is-active" id="tab-app" data-pane="app" role="tabpanel">
         <div class="pricing__grid">
-          <article class="price-card">
+          <article class="price-card price-card--featured">
+            <div class="ribbon">Best Value</div>
+          
             <div class="price-card__head">
-              <h3>Basic</h3>
-              <p class="muted">Cocok untuk coba dulu</p>
+              <h3>YouTube</h3>
+              <p class="muted">YouTube Premium</p>
+          
+              <!-- Toggle detail -->
+              <details class="plan-details">
+                <summary class="plan-summary">
+                  Lihat detail paket
+                  <span class="chev">⌄</span>
+                </summary>
+          
+                <div class="plan-content">
+                  <!-- 3 pilihan harga -->
+                  <div class="plan-group">
+          
+                    <!-- FAMHEAD -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">FAMHEAD</div>
+                        <div class="plan-note">(bisa invite 5 member)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>15K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small"
+                           target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(15K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    <!-- FAMPLAN -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">FAMPLAN</div>
+                        <div class="plan-note">(via invite)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>5K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small"
+                           target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(5K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    <!-- INDIVIDUAL -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">INDIVIDUAL</div>
+                        <div class="plan-note">(Akun pribadi)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>15K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small"
+                           target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20INDIVIDUAL%20(15K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                  </div>
+          
+                  <!-- Detail / benefit -->
+                  <ul class="list plan-benefit">
+                    <li>✅ Semua paket bisa menggunakn akun dari kami</li>
+                    <li>✅ Full Garansi 1 Bulan</li>
+                    <li>✅ Bantuan login & panduan</li>
+                    <li>✅ Support fast response</li>
+                  </ul>
+          
+                  <!-- <div class="fine">*Harga bisa berubah mengikuti stok. Ganti nomor WhatsApp di link.</div> -->
+                </div>
+              </details>
             </div>
-            <div class="price">
-              <span class="price__currency">Rp</span>
-              <span class="price__value">25K</span>
-              <span class="price__period">/bulan</span>
-            </div>
-            <ul class="list">
-              <li>1 App Premium pilihan</li>
-              <li>Aktivasi cepat</li>
-              <li>Support standard</li>
-            </ul>
-            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20App%20Basic.">Pesan</a>
-            <div class="fine">*Ganti nomor WhatsApp di link.</div>
           </article>
+          
+          
 
           <article class="price-card price-card--featured">
             <div class="ribbon">Best Value</div>
+          
             <div class="price-card__head">
-              <h3>Pro</h3>
-              <p class="muted">Paling laris</p>
+              <h3>Gemini</h3>
+              <p class="muted">Gemini AI PRO</p>
+          
+              <!-- Toggle Detail -->
+              <details class="plan-details">
+                <summary class="plan-summary">
+                  Lihat detail paket
+                  <span class="chev">⌄</span>
+                </summary>
+          
+                <!-- ISI DETAIL (yang tadinya panjang) -->
+                <div class="plan-content">
+          
+                  <!-- 3 pilihan harga -->
+                  <div class="plan-group">
+          
+                    <!-- FAMHEAD -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">HEAD</div>
+                        <div class="plan-note">(bisa invite 5 member)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>15K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small" target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(15K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    <!-- FAMPLAN -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">FAMPLAN</div>
+                        <div class="plan-note">(join via invite)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>6K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small" target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(6K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                 
+          
+                  </div>
+          
+                  <!-- Benefit -->
+                  <ul class="list plan-benefit">
+                    <li>✅ Semua paket bisa menggunakan akun dari kami</li>
+                    <li>✅ Full Garansi 1 Bulan</li>
+                    <li>✅ Bantuan login & panduan</li>
+                    <li>✅ Support fast response</li>
+                  </ul>
+          
+                </div>
+              </details>
             </div>
-            <div class="price">
-              <span class="price__currency">Rp</span>
-              <span class="price__value">59K</span>
-              <span class="price__period">/bulan</span>
-            </div>
-            <ul class="list">
-              <li>2 App Premium pilihan</li>
-              <li>Prioritas proses</li>
-              <li>Support cepat</li>
-              <li>Garansi sesuai paket</li>
-            </ul>
-            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20App%20Pro.">Pesan</a>
-            <div class="fine">*Ganti nomor WhatsApp di link.</div>
           </article>
-
-          <article class="price-card">
-            <div class="price-card__head">
-              <h3>Ultimate</h3>
-              <p class="muted">Untuk kebutuhan lengkap</p>
-            </div>
-            <div class="price">
-              <span class="price__currency">Rp</span>
-              <span class="price__value">99K</span>
-              <span class="price__period">/bulan</span>
-            </div>
-            <ul class="list">
-              <li>3 App Premium pilihan</li>
-              <li>Prioritas tertinggi</li>
-              <li>Support VIP</li>
-              <li>Bonus promo bulanan</li>
-            </ul>
-            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20App%20Ultimate.">Pesan</a>
-            <div class="fine">*Ganti nomor WhatsApp di link.</div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Kebsos Cards -->
-      <div class="pricing" id="tab-kebsos" data-pane="kebsos" role="tabpanel">
-        <div class="pricing__grid">
-          <article class="price-card">
-            <div class="price-card__head">
-              <h3>Starter</h3>
-              <p class="muted">Untuk pemula</p>
-            </div>
-            <div class="price">
-              <span class="price__currency">Rp</span>
-              <span class="price__value">15K</span>
-              <span class="price__period">/paket</span>
-            </div>
-            <ul class="list">
-              <li>Followers/likes basic</li>
-              <li>Proses standar</li>
-              <li>Estimasi 1–24 jam</li>
-            </ul>
-            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20Kebsos%20Starter.">Pesan</a>
-            <div class="fine">*Ganti nomor WhatsApp di link.</div>
-          </article>
+          
 
           <article class="price-card price-card--featured">
-            <div class="ribbon">Most Popular</div>
+            <div class="ribbon">Best Value</div>
+          
             <div class="price-card__head">
-              <h3>Growth</h3>
-              <p class="muted">Kenaikan stabil</p>
+              <h3>Chatgpt</h3>
+              <p class="muted">Chatgpt Bussines</p>
+          
+              <!-- Toggle Detail -->
+              <details class="plan-details">
+                <summary class="plan-summary">
+                  Lihat detail paket
+                  <span class="chev">⌄</span>
+                </summary>
+          
+                <!-- ISI DETAIL (yang tadinya panjang) -->
+                <div class="plan-content">
+          
+                  <!-- 3 pilihan harga -->
+                  <div class="plan-group">
+          
+                    <!-- FAMHEAD -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">HEAD</div>
+                        <div class="plan-note">(bisa invite 4 member)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>30K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small" target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(30K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    <!-- FAMPLAN -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">PRIVATE MEMBER</div>
+                        <div class="plan-note">(Private Member)</div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>10K</strong> <span class="per">/bulan</span></div>
+                        <a class="btn btn--small" target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(10K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    
+          
+                  </div>
+          
+                  <!-- Benefit -->
+                  <ul class="list plan-benefit">
+                    <li>✅ Semua paket bisa menggunakan akun dari kami</li>
+                    <li>✅ Full Garansi 1 Bulan</li>
+                    <li>✅ Bantuan login & panduan</li>
+                    <li>✅ Support fast response</li>
+                  </ul>
+          
+                </div>
+              </details>
             </div>
-            <div class="price">
-              <span class="price__currency">Rp</span>
-              <span class="price__value">39K</span>
-              <span class="price__period">/paket</span>
-            </div>
-            <ul class="list">
-              <li>Delivery gradual (opsional)</li>
-              <li>Estimasi 1–12 jam</li>
-              <li>Support prioritas</li>
-              <li>Refill (opsional)</li>
-            </ul>
-            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20Kebsos%20Growth.">Pesan</a>
-            <div class="fine">*Ganti nomor WhatsApp di link.</div>
-          </article>
-
-          <article class="price-card">
-            <div class="price-card__head">
-              <h3>Booster</h3>
-              <p class="muted">Untuk campaign</p>
-            </div>
-            <div class="price">
-              <span class="price__currency">Rp</span>
-              <span class="price__value">79K</span>
-              <span class="price__period">/paket</span>
-            </div>
-            <ul class="list">
-              <li>Speed lebih cepat</li>
-              <li>Estimasi 1–6 jam</li>
-              <li>Opsi target & segment</li>
-              <li>Support VIP</li>
-            </ul>
-            <a class="btn btn--full" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20Paket%20Kebsos%20Booster.">Pesan</a>
-            <div class="fine">*Ganti nomor WhatsApp di link.</div>
           </article>
         </div>
       </div>
+
+      <!-- Kebsos Cards (Booster dipindah ke sini) -->
+      <div class="pricing" id="tab-kebsos" data-pane="kebsos" role="tabpanel">
+        <div class="pricing__grid">
+          <article class="price-card price-card--featured">
+            <div class="ribbon">Best Value</div>
+          
+            <div class="price-card__head">
+              <h3>Instagram</h3>
+              <p class="muted">Followers Real Indo Permanen</p>
+          
+              <!-- Toggle detail -->
+              <details class="plan-details">
+                <summary class="plan-summary">
+                  Lihat detail paket
+                  <span class="chev">⌄</span>
+                </summary>
+          
+                <div class="plan-content">
+                  <!-- 3 pilihan harga -->
+                  <div class="plan-group">
+          
+                    <!-- FAMHEAD -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">20 Followers</div>
+                        <div class="plan-note"></div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>2K</strong> <span class="per"></span></div>
+                        <a class="btn btn--small"
+                           target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(2K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    <!-- FAMPLAN -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">50 Followers</div>
+                        <div class="plan-note"></div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>5K</strong> <span class="per"></span></div>
+                        <a class="btn btn--small"
+                           target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(5K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                    <!-- INDIVIDUAL -->
+                    <div class="plan-row">
+                      <div class="plan-left">
+                        <div class="plan-name">100 Followers</div>
+                        <div class="plan-note"></div>
+                      </div>
+                      <div class="plan-right">
+                        <div class="plan-price"><span class="rp">Rp</span> <strong>9K</strong> <span class="per"></span></div>
+                        <a class="btn btn--small"
+                           target="_blank" rel="noopener"
+                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20INDIVIDUAL%20(9K/bulan).">
+                          Pesan
+                        </a>
+                      </div>
+                    </div>
+          
+                  </div>
+          
+                  <!-- Detail / benefit -->
+                  <ul class="list plan-benefit">
+                    <li>✅ Akun Private Bisa</li>
+                    <li>✅ Bukat akun BOT</li>
+                    <li>✅ Sistem follow manual</li>
+                    <li>✅ Followers bisa Like & Komen Di Postingan Akun Kalian</li>
+                  </ul>
+          
+                  <!-- <div class="fine">*Harga bisa berubah mengikuti stok. Ganti nomor WhatsApp di link.</div> -->
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+
     </section>
 
     <!-- KEUNGGULAN -->
     <section id="keunggulan" class="section container">
       <div class="section__head">
         <h2>Kenapa OYPREMIUM?</h2>
-        <p>Kami fokus ke kualitas layanan dan pengalaman pembelian yang rapi.</p>
+        <p>Kami fokus ke kualitas layanan dan pengalaman pembelian yang aman.</p>
       </div>
 
       <div class="grid-3">
@@ -293,7 +483,7 @@
         </div>
         <div class="card">
           <h3>Fleksibel</h3>
-          <p>Paket bisa custom sesuai kebutuhan (bulk order, campaign, dll).</p>
+          <p>Khusus Kebutuhan sosial media bisa proses dulu sampai selesai / bayar setelah proses selesai.</p>
         </div>
       </div>
     </section>
@@ -307,16 +497,16 @@
 
       <div class="faq">
         <details>
-          <summary>Berapa lama prosesnya?</summary>
-          <p>Tergantung paket dan antrean. Rata-rata 5–30 menit untuk aktivasi app, dan 1–24 jam untuk kebsos.</p>
+          <summary>Cara ordernya gimana?</summary>
+          <p>Klik order nanti akan otomatis diarahkan ke Whatshap kami.</p>
         </details>
         <details>
           <summary>Ada garansi?</summary>
-          <p>Ada untuk paket tertentu (misalnya refill atau garansi masa aktif). Detailnya tertulis di tiap paket.</p>
+          <p>Semua paket bergaransi sesuai detailnya yang tertulis di tiap produk App Prem / Jasa kebsos.</p>
         </details>
         <details>
-          <summary>Bisa custom paket?</summary>
-          <p>Bisa. Chat admin di bagian kontak, jelaskan kebutuhan kamu.</p>
+          <summary>Followers Instagram nya permanen?</summary>
+          <p>permanen, kita menggunakan sistem follow manual dengan akun real indo bukan dengan web bot, Bisa juga bayar setelah followers masuk, jadi sudah pasti aman dan terpercaya.</p>
         </details>
       </div>
     </section>
@@ -329,7 +519,7 @@
           <p class="muted">Isi form di bawah atau langsung klik tombol WhatsApp.</p>
 
           <div class="contact__actions">
-            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/6280000000000?text=Halo%20OYPREMIUM,%20saya%20mau%20tanya%20paket.">WhatsApp</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20tanya%20paket.">WhatsApp</a>
             <a class="btn btn--ghost" href="mailto:admin@oypremium.com">Email</a>
           </div>
 
@@ -382,7 +572,7 @@
   <script>
     // Tahun otomatis
     document.getElementById("year").textContent = new Date().getFullYear();
-
+  
     // Mobile nav
     const toggle = document.getElementById("navToggle");
     const menu = document.getElementById("navMenu");
@@ -394,34 +584,221 @@
       menu.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
     }));
-
-    // Tabs pricing
-    const tabs = document.querySelectorAll(".tab");
-    const panes = document.querySelectorAll("[data-pane]");
-    tabs.forEach(t => t.addEventListener("click", () => {
-      tabs.forEach(x => x.classList.remove("is-active"));
-      t.classList.add("is-active");
-
-      const key = t.dataset.tab;
-      panes.forEach(p => p.classList.remove("is-active"));
-      document.querySelector(`#tab-${key}`).classList.add("is-active");
-
-      tabs.forEach(x => x.setAttribute("aria-selected", x === t ? "true" : "false"));
-    }));
-
+  
     // Form -> WhatsApp
     function sendWA(e) {
       e.preventDefault();
       const nama = document.getElementById("nama").value.trim();
       const wa = document.getElementById("wa").value.trim();
       const pesan = document.getElementById("pesan").value.trim();
-
-      const nomorAdmin = "6280000000000"; // GANTI NOMOR ADMIN (format 62...)
+  
+      const nomorAdmin = "6289523410422"; // GANTI NOMOR ADMIN (format 62...)
       const text = `Halo OYPREMIUM!\n\nNama: ${nama}\nWA: ${wa}\nPesan: ${pesan}`;
       const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(text)}`;
       window.open(url, "_blank");
       return false;
     }
+  
+    /**
+     * PRICING TABS + SEARCH (FINAL - SINGLE SOURCE OF TRUTH)
+     * - Search hanya di judul <h3>
+     * - Bisa lintas tab
+     * - Clear (✕) mengembalikan semua card seperti awal
+     * - User tetap bebas klik tab lain walau search aktif
+     */
+    (function () {
+      const searchInput = document.getElementById("pricingSearch");
+      const clearBtn = document.getElementById("pricingSearchClear");
+  
+      const tabs = Array.from(document.querySelectorAll(".tab"));
+      const panes = Array.from(document.querySelectorAll(".pricing[data-pane]"));
+  
+      const norm = (s) => (s || "").trim().toLowerCase();
+  
+      function getActiveTabName() {
+        const active = document.querySelector(".tab.is-active");
+        return active ? active.dataset.tab : (tabs[0]?.dataset.tab || "");
+      }
+  
+      function activateTab(tabName) {
+        tabs.forEach((btn) => {
+          const isActive = btn.dataset.tab === tabName;
+          btn.classList.toggle("is-active", isActive);
+          btn.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+  
+        panes.forEach((pane) => {
+          const isActive = pane.dataset.pane === tabName;
+          pane.classList.toggle("is-active", isActive);
+          pane.setAttribute("aria-hidden", isActive ? "false" : "true");
+        });
+      }
+  
+      function cardTitleText(card) {
+        const h3 = card.querySelector("h3")?.textContent || "";
+  const muted = card.querySelector(".muted")?.textContent || "";
+  return norm(h3 + " " + muted);
+      }
+  
+      // Empty state per pane (auto-create)
+      function ensureEmptyState(pane) {
+        let empty = pane.querySelector(".pricing-empty");
+        if (!empty) {
+          empty = document.createElement("div");
+          empty.className = "pricing-empty";
+          empty.innerHTML = "Tidak ada hasil di tab ini. Coba kata kunci lain atau pindah tab.";
+          pane.appendChild(empty);
+        }
+        return empty;
+      }
+  
+      function setClearVisible(isVisible) {
+        if (!clearBtn) return;
+        clearBtn.classList.toggle("is-active", isVisible);
+      }
+  
+      // IMPORTANT: reset harus menghapus SEMUA efek filter (class hidden) di SEMUA pane
+      function resetAllCards() {
+        panes.forEach((pane) => {
+          const cards = Array.from(pane.querySelectorAll(".price-card"));
+          cards.forEach((c) => c.classList.remove("is-hidden"));
+  
+          const empty = ensureEmptyState(pane);
+          empty.classList.remove("is-active");
+        });
+      }
+  
+      function filterAllPanes(query) {
+        const counts = {};
+  
+        panes.forEach((pane) => {
+          const paneName = pane.dataset.pane;
+          const cards = Array.from(pane.querySelectorAll(".price-card"));
+          let hits = 0;
+  
+          cards.forEach((card) => {
+            const isMatch = cardTitleText(card).includes(query);
+            card.classList.toggle("is-hidden", !isMatch);
+            if (isMatch) hits++;
+          });
+  
+          counts[paneName] = hits;
+  
+          // reset empty dulu, nanti ditentukan untuk pane aktif saja
+          const empty = ensureEmptyState(pane);
+          empty.classList.remove("is-active");
+        });
+  
+        return counts;
+      }
+  
+      let userOverrideTab = false;
+  
+      function maybeAutoSwitchTab(counts) {
+        const active = getActiveTabName();
+  
+        // kalau user lagi override (habis klik tab), jangan auto-switch
+        if (userOverrideTab) return;
+  
+        // kalau tab aktif masih punya hasil, stay
+        if ((counts[active] || 0) > 0) return;
+  
+        // cari pane dengan hasil terbanyak
+        let bestPane = null;
+        let bestCount = 0;
+        Object.keys(counts).forEach((paneName) => {
+          if (counts[paneName] > bestCount) {
+            bestCount = counts[paneName];
+            bestPane = paneName;
+          }
+        });
+  
+        if (bestPane && bestCount > 0 && bestPane !== active) {
+          activateTab(bestPane);
+        }
+      }
+  
+      function showEmptyIfNeeded(query) {
+        const active = getActiveTabName();
+        const activePane = document.querySelector(`.pricing[data-pane="${active}"]`);
+        if (!activePane) return;
+  
+        const visibleCards = Array.from(activePane.querySelectorAll(".price-card"))
+          .filter((c) => !c.classList.contains("is-hidden"));
+  
+        const empty = ensureEmptyState(activePane);
+        if (query && visibleCards.length === 0) empty.classList.add("is-active");
+        else empty.classList.remove("is-active");
+      }
+  
+      function applySearch(raw) {
+        const query = norm(raw);
+        setClearVisible(!!query);
+  
+        // kalau kosong -> reset total (BALIK KE AWAL)
+        if (!query) {
+          resetAllCards();
+          showEmptyIfNeeded(""); // matikan empty state
+          userOverrideTab = false; // allow autoswitch next time
+          return;
+        }
+  
+        const counts = filterAllPanes(query);
+        maybeAutoSwitchTab(counts);
+        showEmptyIfNeeded(query);
+      }
+  
+      // listeners
+      searchInput?.addEventListener("input", (e) => {
+        userOverrideTab = false; // typing allows autoswitch
+        applySearch(e.target.value);
+      });
+  
+      clearBtn?.addEventListener("click", () => {
+        // Clear harus trigger reset logic yang sama seperti input kosong
+        searchInput.value = "";
+        userOverrideTab = false;
+        applySearch("");
+        searchInput.focus();
+      });
+  
+      searchInput?.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          searchInput.value = "";
+          userOverrideTab = false;
+          applySearch("");
+          searchInput.blur();
+        }
+      });
+  
+      tabs.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          userOverrideTab = true;
+          activateTab(btn.dataset.tab);
+  
+          // tetap apply filter sesuai search sekarang (kalau ada)
+          const current = norm(searchInput?.value);
+          if (current) {
+            filterAllPanes(current);
+            showEmptyIfNeeded(current);
+          } else {
+            resetAllCards();
+            showEmptyIfNeeded("");
+          }
+        });
+      });
+  
+      // init
+      panes.forEach((pane) => {
+        pane.setAttribute("aria-hidden", pane.classList.contains("is-active") ? "false" : "true");
+        ensureEmptyState(pane);
+      });
+  
+      // init state clear button
+      setClearVisible(!!norm(searchInput?.value));
+    })();
   </script>
+  
+  
 </body>
 </html>
