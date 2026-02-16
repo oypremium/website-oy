@@ -1,804 +1,485 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OYPREMIUM — App Premium & Kebsos</title>
-  <meta name="description" content="OYPREMIUM menjual App Premium dan layanan Kebsos dengan harga terbaik, proses cepat, dan support responsif." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OYPREMIUM — App Premium & Social Boost Marketplace</title>
+  <meta name="description" content="Platform marketplace #1 untuk App Premium dan Social Boost dengan harga terjangkau, proses cepat, dan bergaransi.">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- NAVBAR -->
+
+  <!-- Header -->
   <header class="header">
-    <nav class="nav container">
-      <a class="brand" href="#home" aria-label="OYPREMIUM Home">
-        <span class="brand__logo">OY</span>
-        <span class="brand__name">OYPREMIUM</span>
-      </a>
+    <div class="container">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <div class="logo-icon">OY</div>
+          <div class="logo-text">
+            <span class="logo-name">OYPREMIUM</span>
+            <span class="logo-sub">App prem & Kebsos</span>
+          </div>
+        </a>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+        <!-- Navigation -->
+        <nav class="nav" id="mainNav">
+          <a href="#home" class="nav-link active">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M2 6.5L9 2L16 6.5V15C16 15.5523 15.5523 16 15 16H3C2.44772 16 2 15.5523 2 15V6.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 16V9H12V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Home
+          </a>
+          <a href="#apps" class="nav-link">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="11" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="2" y="11" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="11" y="11" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            Apps
+          </a>
+          <a href="#sosmed" class="nav-link">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M16 9C16 12.866 12.866 16 9 16C5.13401 16 2 12.866 2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M9 5V9L12 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Sosmed
+          </a>
+          <!-- <a href="#cart" class="nav-link">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M2 2H3.5L5.5 14H14.5L16.5 6H4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="6" cy="16" r="1" fill="currentColor"/>
+              <circle cx="14" cy="16" r="1" fill="currentColor"/>
+            </svg>
+            Cart
+          </a> -->
 
-      <div class="nav__menu" id="navMenu">
-        <a href="#produk">Produk</a>
-        <a href="#pricing">Harga</a>
-        <a href="#keunggulan">Keunggulan</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn--small" href="#kontak">Kontak</a>
+          <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+        </nav>
+
+        <!-- Contact Button -->
+        <button class="btn-contact" data-wa data-msg="Halo OYPREMIUM, saya ingin konsultasi paket.">
+          Hubungi Admin
+        </button>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <main id="home">
-    <section class="hero container">
-      <div class="hero__content">
-        
-        <h1>Jual <span class="grad">App Premium</span> & <span class="grad2">Kebsos</span> dengan proses cepat dan aman.</h1>
-        <p class="lead">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#home" class="mobile-link active">
+      <!-- icon -->
+      Home
+    </a>
+  
+    <a href="index.html#apps" class="mobile-link">
+      <!-- icon -->
+      Apps
+    </a>
+  
+    <a href="index.html#sosmed" class="mobile-link">
+      <!-- icon -->
+      Sosmed
+    </a>
+  
+    <!-- <a href="index.html#cart" class="mobile-link"> -->
+      <!-- icon -->
+      <!-- Cart
+    </a> -->
+  </div>
+  
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Oypremium
+          </div>
           
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn" href="#pricing">Lihat Harga</a>
-          <a class="btn btn--ghost" href="#kontak">Chat Admin</a>
-        </div>
-
-        <div class="trust">
-          <div class="trust__item">
-            <div class="trust__icon">💸</div>
-            <div>
-              <div class="trust__title">Harga Terjangkau</div>
-              <div class="trust__desc">Mulai dari 1K aja</div>
-            </div>
-          </div>
-          <div class="trust__item">
-            <div class="trust__icon">🛡️</div>
-            <div>
-              <div class="trust__title">Aman & Terpercaya</div>
-              <div class="trust__desc">Garansi sesuai paket</div>
-            </div>
-          </div>
-          <div class="trust__item">
-            <div class="trust__icon">💬</div>
-            <div>
-              <div class="trust__title">Support</div>
-              <div class="trust__desc">Admin fast response</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__card" aria-label="Logo OYPREMIUM">
-        <div class="logo-box">
-          <div class="oy-text oy-float oy-shine">OY</div>
+          <h1 class="hero-title">
+            APP PREMIUM &<span class="gradient-text"> KEBSOS</span>
+          </h1>
           
-        </div>
-      </div>
-      
-      
-    </section>
-
-    <!-- PRODUK -->
-    <section id="produk" class="section container">
-      <div class="section__head">
-        <h2>Produk Utama</h2>
-        <p>Pilih kategori layanan yang kamu butuhkan. Semua paket bisa custom.</p>
-      </div>
-
-      <div class="grid-2">
-        <article class="feature">
-          <div class="feature__top">
-            <div class="pill pill--blue">App Premium</div>
-            <h3>Akun premium</h3>
-          </div>
-          <p>
-            YouTube Premium, Gemini AI PRO, Chatgpt dan lainnya.
-          
-          </p>
-          <ul class="mini">
-            <li>• Famhead/Famplan/Shared/Private</li>
-            <li>• Panduan Penggunaan </li>
-            <li>• FULL Bergaransi</li>
-          </ul>
-          <a class="link" href="#pricing">Lihat paket →</a>
-        </article>
-
-        <article class="feature">
-          <div class="feature__top">
-            <div class="pill pill--purple">Kebsos</div>
-            <h3>Boost Sosial Media</h3>
-          </div>
-          <p>
-            Followers, likes, views, komentar untuk Instagram.
+          <h3 class="hero-desc">
+            Platform penyedia aplikasi premium & kebutuhan sosial media paling aman dan terpercaya di indonesia.
+          </h3>
+    
+          <!-- BUTTON BULAT -->
+          <div class="hero-buttons">
             
-          </p>
-          <ul class="mini">
-            <li>• Bisa Bayar Setelah followers masuk</li>
-            <li>• Bergaransi </li>
-            <li>• Proses Cepat</li>
-          </ul>
-          <a class="link" href="#pricing">Lihat paket →</a>
-        </article>
+            <!-- WhatsApp -->
+            <div class="hero-buttons">
+
+              <!-- WhatsApp PNG -->
+              <a href="https://api.whatsapp.com/send?phone=6289523410422&text=Halo%20OYPREMIUM%2C%20saya%20ingin%20order%20paket."
+   class="btn-circle whatsapp"
+   target="_blank"
+   rel="noopener">
+  <img src="images/wa.png" alt="WhatsApp" class="icon-img">
+</a>
+
+            
+              <!-- Shopee PNG -->
+              <!-- <a href="https://shopee.co.id/usernameanda"
+                 class="btn-circle shopee"
+                 target="_blank">
+                <img src="images/sh.png" alt="Shopee" class="icon-img2">
+              </a> -->
+            
+            </div>
+            
+    
+          </div>
+        </div>
       </div>
     </section>
+    
 
-    <!-- PRICING -->
-    <section id="pricing" class="section container">
-      <div class="section__head section__head--row">
-        <div>
-          <h2>Daftar App Prem & Kebsos</h2>
+    <!-- Filter Tabs -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">
+            Semua
+          </button>
+          <button class="filter-tab" data-filter="app-prem">
+            🔥 APP PREM
+          </button>
+          <button class="filter-tab" data-filter="kebsos">
+            ⭐ KEBSOS
+          </button>
+         
         </div>
-      
-        <div class="pricing-search">
-          <span class="pricing-search__clear" id="pricingSearchClear" aria-label="Clear search">✕</span>
 
-          <input
-            id="pricingSearch"
-            type="text"
-            placeholder="Cari App Prem / Kebsos"
-            autocomplete="off"
-          />
-        </div>
-      </div>
-
-      <div class="tabs" role="tablist" aria-label="Pilihan pricing">
-        <button class="tab is-active" data-tab="app" role="tab" aria-selected="true">App Premium</button>
-        <button class="tab" data-tab="kebsos" role="tab" aria-selected="false">Kebsos</button>
-      </div>
-
-      <!-- App Premium Cards -->
-      <div class="pricing is-active" id="tab-app" data-pane="app" role="tabpanel">
-        <div class="pricing__grid">
-          <article class="price-card price-card--featured">
-            <div class="ribbon">Best Value</div>
-          
-            <div class="price-card__head">
-              <h3>YouTube</h3>
-              <p class="muted">YouTube Premium</p>
-          
-              <!-- Toggle detail -->
-              <details class="plan-details">
-                <summary class="plan-summary">
-                  Lihat detail paket
-                  <span class="chev">⌄</span>
-                </summary>
-          
-                <div class="plan-content">
-                  <!-- 3 pilihan harga -->
-                  <div class="plan-group">
-          
-                    <!-- FAMHEAD -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">FAMHEAD</div>
-                        <div class="plan-note">(bisa invite 5 member)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>15K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small"
-                           target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(15K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    <!-- FAMPLAN -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">FAMPLAN</div>
-                        <div class="plan-note">(via invite)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>5K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small"
-                           target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(5K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    <!-- INDIVIDUAL -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">INDIVIDUAL</div>
-                        <div class="plan-note">(Akun pribadi)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>15K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small"
-                           target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20INDIVIDUAL%20(15K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                  </div>
-          
-                  <!-- Detail / benefit -->
-                  <ul class="list plan-benefit">
-                    <li>✅ Semua paket bisa menggunakn akun dari kami</li>
-                    <li>✅ Full Garansi 1 Bulan</li>
-                    <li>✅ Bantuan login & panduan</li>
-                    <li>✅ Support fast response</li>
-                  </ul>
-          
-                  <!-- <div class="fine">*Harga bisa berubah mengikuti stok. Ganti nomor WhatsApp di link.</div> -->
-                </div>
-              </details>
-            </div>
-          </article>
-          
-          
-
-          <article class="price-card price-card--featured">
-            <div class="ribbon">Best Value</div>
-          
-            <div class="price-card__head">
-              <h3>Gemini</h3>
-              <p class="muted">Gemini AI PRO</p>
-          
-              <!-- Toggle Detail -->
-              <details class="plan-details">
-                <summary class="plan-summary">
-                  Lihat detail paket
-                  <span class="chev">⌄</span>
-                </summary>
-          
-                <!-- ISI DETAIL (yang tadinya panjang) -->
-                <div class="plan-content">
-          
-                  <!-- 3 pilihan harga -->
-                  <div class="plan-group">
-          
-                    <!-- FAMHEAD -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">HEAD</div>
-                        <div class="plan-note">(bisa invite 5 member)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>15K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small" target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(15K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    <!-- FAMPLAN -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">FAMPLAN</div>
-                        <div class="plan-note">(join via invite)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>6K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small" target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(6K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                 
-          
-                  </div>
-          
-                  <!-- Benefit -->
-                  <ul class="list plan-benefit">
-                    <li>✅ Semua paket bisa menggunakan akun dari kami</li>
-                    <li>✅ Full Garansi 1 Bulan</li>
-                    <li>✅ Bantuan login & panduan</li>
-                    <li>✅ Support fast response</li>
-                  </ul>
-          
-                </div>
-              </details>
-            </div>
-          </article>
-          
-
-          <article class="price-card price-card--featured">
-            <div class="ribbon">Best Value</div>
-          
-            <div class="price-card__head">
-              <h3>Chatgpt</h3>
-              <p class="muted">Chatgpt Bussines</p>
-          
-              <!-- Toggle Detail -->
-              <details class="plan-details">
-                <summary class="plan-summary">
-                  Lihat detail paket
-                  <span class="chev">⌄</span>
-                </summary>
-          
-                <!-- ISI DETAIL (yang tadinya panjang) -->
-                <div class="plan-content">
-          
-                  <!-- 3 pilihan harga -->
-                  <div class="plan-group">
-          
-                    <!-- FAMHEAD -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">HEAD</div>
-                        <div class="plan-note">(bisa invite 4 member)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>30K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small" target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(30K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    <!-- FAMPLAN -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">PRIVATE MEMBER</div>
-                        <div class="plan-note">(Private Member)</div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>10K</strong> <span class="per">/bulan</span></div>
-                        <a class="btn btn--small" target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(10K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    
-          
-                  </div>
-          
-                  <!-- Benefit -->
-                  <ul class="list plan-benefit">
-                    <li>✅ Semua paket bisa menggunakan akun dari kami</li>
-                    <li>✅ Full Garansi 1 Bulan</li>
-                    <li>✅ Bantuan login & panduan</li>
-                    <li>✅ Support fast response</li>
-                  </ul>
-          
-                </div>
-              </details>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Kebsos Cards (Booster dipindah ke sini) -->
-      <div class="pricing" id="tab-kebsos" data-pane="kebsos" role="tabpanel">
-        <div class="pricing__grid">
-          <article class="price-card price-card--featured">
-            <div class="ribbon">Best Value</div>
-          
-            <div class="price-card__head">
-              <h3>Instagram</h3>
-              <p class="muted">Followers Real Indo Permanen</p>
-          
-              <!-- Toggle detail -->
-              <details class="plan-details">
-                <summary class="plan-summary">
-                  Lihat detail paket
-                  <span class="chev">⌄</span>
-                </summary>
-          
-                <div class="plan-content">
-                  <!-- 3 pilihan harga -->
-                  <div class="plan-group">
-          
-                    <!-- FAMHEAD -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">20 Followers</div>
-                        <div class="plan-note"></div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>2K</strong> <span class="per"></span></div>
-                        <a class="btn btn--small"
-                           target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMHEAD%20(2K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    <!-- FAMPLAN -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">50 Followers</div>
-                        <div class="plan-note"></div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>5K</strong> <span class="per"></span></div>
-                        <a class="btn btn--small"
-                           target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20FAMPLAN%20(5K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                    <!-- INDIVIDUAL -->
-                    <div class="plan-row">
-                      <div class="plan-left">
-                        <div class="plan-name">100 Followers</div>
-                        <div class="plan-note"></div>
-                      </div>
-                      <div class="plan-right">
-                        <div class="plan-price"><span class="rp">Rp</span> <strong>9K</strong> <span class="per"></span></div>
-                        <a class="btn btn--small"
-                           target="_blank" rel="noopener"
-                           href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20pesan%20YouTube%20Premium%20INDIVIDUAL%20(9K/bulan).">
-                          Pesan
-                        </a>
-                      </div>
-                    </div>
-          
-                  </div>
-          
-                  <!-- Detail / benefit -->
-                  <ul class="list plan-benefit">
-                    <li>✅ Akun Private Bisa</li>
-                    <li>✅ Bukat akun BOT</li>
-                    <li>✅ Sistem follow manual</li>
-                    <li>✅ Followers bisa Like & Komen Di Postingan Akun Kalian</li>
-                  </ul>
-          
-                  <!-- <div class="fine">*Harga bisa berubah mengikuti stok. Ganti nomor WhatsApp di link.</div> -->
-                </div>
-              </details>
-            </div>
-          </article>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- KEUNGGULAN -->
-    <section id="keunggulan" class="section container">
-      <div class="section__head">
-        <h2>Kenapa OYPREMIUM?</h2>
-        <p>Kami fokus ke kualitas layanan dan pengalaman pembelian yang aman.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Transparan</h3>
-          <p>Deskripsi paket jelas + estimasi proses. Tidak ada biaya tersembunyi.</p>
-        </div>
-        <div class="card">
-          <h3>Rapi & Profesional</h3>
-          <p>Order dicatat, progress diinformasikan, dan ada SOP support.</p>
-        </div>
-        <div class="card">
-          <h3>Fleksibel</h3>
-          <p>Khusus Kebutuhan sosial media bisa proses dulu sampai selesai / bayar setelah proses selesai.</p>
+        <div class="search-box">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="searchProduct" placeholder="Cari produk...">
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section container">
-      <div class="section__head">
-        <h2>FAQ</h2>
-        <p>Pertanyaan yang sering ditanyakan.</p>
-      </div>
+    <!-- Products Grid -->
+    <section class="products" id="apps" >
+      <div class="container">
+        <div class="products-grid" id="productsGrid">
+          
+          <!-- YouTube Premium -->
+          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge popular">POPULAR</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #ffffff 0%, #dd5d5d 100%);">
+              <img src="images/yt.png" alt="YouTube Premium">
+            </div>
+            <h3 class="product-name">YouTube Premium</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 5.000</div>
+            <button class="product-btn" onclick="showProductDetail('youtube')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
 
-      <div class="faq">
-        <details>
-          <summary>Cara ordernya gimana?</summary>
-          <p>Klik order nanti akan otomatis diarahkan ke Whatshap kami.</p>
-        </details>
-        <details>
-          <summary>Ada garansi?</summary>
-          <p>Semua paket bergaransi sesuai detailnya yang tertulis di tiap produk App Prem / Jasa kebsos.</p>
-        </details>
-        <details>
-          <summary>Followers Instagram nya permanen?</summary>
-          <p>permanen, kita menggunakan sistem follow manual dengan akun real indo bukan dengan web bot, Bisa juga bayar setelah followers masuk, jadi sudah pasti aman dan terpercaya.</p>
-        </details>
+          <!-- Gemini AI -->
+          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge popular">POPULAR</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #a2c3f6 0%, #e49797 100%);">
+              <img src="images/Ge.png" alt="YouTube Premium">
+            </div>
+            <h3 class="product-name">Gemini AI PRO</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 6.000</div>
+            <button class="product-btn" onclick="showProductDetail('gemini')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Canva Pro -->
+          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge popular">POPULAR</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #00C4CC 0%, #7D2AE8 100%);">
+              🎨
+            </div>
+            <h3 class="product-name">Canva Pro</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 3.000</div>
+            <button class="product-btn" onclick="showProductDetail('canva')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div> -->
+
+          <!-- CapCut Pro -->
+          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge bestseller">BEST SELLER</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #000000 0%, #434343 100%);">
+              ✂️
+            </div>
+            <h3 class="product-name">CapCut Pro</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 5.000</div>
+            <button class="product-btn" onclick="showProductDetail('capcut')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div> -->
+
+          <!-- ChatGPT -->
+          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge popular">POPULAR</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #10A37F 0%, #087F5B 100%);">
+              <img src="images/ch.png" alt="YouTube Premium">
+            </div>
+            <h3 class="product-name">ChatGPT Business</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 10.000</div>
+            <button class="product-btn" onclick="showProductDetail('chatgpt')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Spotify Premium -->
+          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge new">NEW</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #1DB954 0%, #1AA34A 100%);">
+              🎵
+            </div>
+            <h3 class="product-name">Spotify Premium</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 8.000</div>
+            <button class="product-btn" onclick="showProductDetail('spotify')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div> -->
+
+          <!-- Netflix -->
+          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-icon" style="background: linear-gradient(135deg, #E50914 0%, #B20710 100%);">
+              📺
+            </div>
+            <h3 class="product-name">Netflix Premium</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 25.000</div>
+            <button class="product-btn" onclick="showProductDetail('netflix')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div> -->
+
+          <!-- Disney+ -->
+          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
+            <div class="product-badge new">NEW</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #113CCF 0%, #0E2B8F 100%);">
+              🏰
+            </div>
+            <h3 class="product-name">Disney+ Hotstar</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 15.000</div>
+            <button class="product-btn" onclick="showProductDetail('disney')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div> -->
+
+          <!-- Instagram Followers -->
+          <div class="product-card" data-section="kebsos" data-category="kebsos followers bestseller">
+            <div class="product-badge bestseller">BEST SELLER</div>
+            <div class="product-icon" style="background: linear-gradient(135deg, #ffffff 0%, #857c81 100%);">
+              <img src="images/ig.png" >
+            </div>
+            <h3 class="product-name">Instagram Followers Real Indo</h3>
+            <p class="product-label">MULAI DARI</p>
+            <div class="product-price">Rp 2.000</div>
+            <button class="product-btn" onclick="showProductDetail('instagram')">
+              <span>Lihat Detail</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="noResults">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="2"/>
+            <path d="M40 24V44M40 52V52.02" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h3>Produk tidak ditemukan</h3>
+          <p>Coba kata kunci lain atau lihat semua produk</p>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Features -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Kenapa Pilih OYPREMIUM?</h2>
+          <p class="section-desc">Marketplace terpercaya dengan layanan premium dan profesional</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">100% Terpercaya</h3>
+            <p class="feature-desc">Garansi full setiap transaksi dengan track record 1000+ pelanggan puas</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Proses Cepat</h3>
+            <p class="feature-desc">Instant delivery untuk app premium, sosmed 1-24 jam dengan update real-time</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7V12C2 17 6 21 12 22C18 21 22 17 22 12V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Harga Terjangkau</h3>
+            <p class="feature-desc">Mulai dari 2K saja dengan kualitas premium dan support 24/7</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- KONTAK -->
-    <section id="kontak" class="section container">
-      <div class="contact">
-        <div>
-          <h2>Kontak Admin</h2>
-          <p class="muted">Isi form di bawah atau langsung klik tombol WhatsApp.</p>
-
-          <div class="contact__actions">
-            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/6289523410422?text=Halo%20OYPREMIUM,%20saya%20mau%20tanya%20paket.">WhatsApp</a>
-            <a class="btn btn--ghost" href="mailto:admin@oypremium.com">Email</a>
-          </div>
-
-          <div class="contact__info">
-            <div><span>Jam Operasional:</span> 09.00–22.00 WIB</div>
-            <div><span>Lokasi:</span> Online</div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Siap Upgrade Ke Premium?</h2>
+            <p class="cta-desc">
+              Hubungi kami sekarang dan dapatkan konsultasi gratis untuk paket yang sesuai kebutuhan Anda!
+            </p>
+            <button class="btn-cta" data-wa data-msg="Halo OYPREMIUM, saya ingin konsultasi dan order paket premium!">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M17 9.5C17 13.6421 13.6421 17 9.5 17C8.23539 17 7.04467 16.6693 6 16.0898L2 17L2.91016 13C2.33073 11.9553 2 10.7646 2 9.5C2 5.35786 5.35786 2 9.5 2C13.6421 2 17 5.35786 17 9.5Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              Chat WhatsApp Sekarang
+            </button>
+            <div class="cta-info">
+              <span>⏰ Online 09:00 - 22:00 WIB</span>
+              <span>⚡ Response fast</span>
+            </div>
           </div>
         </div>
-
-        <form class="form" onsubmit="return sendWA(event)">
-          <div class="form__row">
-            <label>Nama</label>
-            <input id="nama" type="text" placeholder="Nama kamu" required />
-          </div>
-          <div class="form__row">
-            <label>Nomor WhatsApp</label>
-            <input id="wa" type="tel" placeholder="08xxxxxxxxxx" required />
-          </div>
-          <div class="form__row">
-            <label>Pesan</label>
-            <textarea id="pesan" rows="4" placeholder="Mau order apa? (App Premium/Kebsos) + detailnya" required></textarea>
-          </div>
-          <button class="btn btn--full" type="submit">Kirim ke WhatsApp</button>
-          <div class="fine">Form ini akan membuka chat WhatsApp dengan pesan otomatis.</div>
-        </form>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__left">
-        <div class="brand brand--footer">
-          <span class="brand__logo">OY</span>
-          <span class="brand__name">OYPREMIUM</span>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">OY</div>
+            <div class="logo-text">
+              <span class="logo-name">OYPREMIUM</span>
+              
+            </div>
+          </div>
+          <p class="footer-desc">
+            Platform penyedia aplikasi premium & kebutuhan sosial media paling aman dan terpercaya di indonesia.
+          </p>
         </div>
-        <p class="muted">App Premium & Kebsos • Cepat • Aman • Support</p>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Produk</h4>
+            <a href="#apps">App Premium</a>
+            <a href="#sosmed">Social Boost</a>
+            <a href="#new">Produk Terbaru</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Hubungi Kami</a>
+            <a href="#">Cara Order</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Refund Policy</a>
+          </div>
+        </div>
       </div>
 
-      <div class="footer__right">
-        <a href="#produk">Produk</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#kontak">Kontak</a>
+      <div class="footer-bottom">
+        <p>© <span id="year">2024</span> OYPREMIUM. All rights reserved.</p>
+        <p>Made with ❤️ for premium experience</p>
       </div>
     </div>
-    <div class="footer__bottom">© <span id="year"></span> OYPREMIUM. All rights reserved.</div>
   </footer>
 
-  <script>
-    // Tahun otomatis
-    document.getElementById("year").textContent = new Date().getFullYear();
-  
-    // Mobile nav
-    const toggle = document.getElementById("navToggle");
-    const menu = document.getElementById("navMenu");
-    toggle.addEventListener("click", () => {
-      const open = menu.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      menu.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    }));
-  
-    // Form -> WhatsApp
-    function sendWA(e) {
-      e.preventDefault();
-      const nama = document.getElementById("nama").value.trim();
-      const wa = document.getElementById("wa").value.trim();
-      const pesan = document.getElementById("pesan").value.trim();
-  
-      const nomorAdmin = "6289523410422"; // GANTI NOMOR ADMIN (format 62...)
-      const text = `Halo OYPREMIUM!\n\nNama: ${nama}\nWA: ${wa}\nPesan: ${pesan}`;
-      const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank");
-      return false;
-    }
-  
-    /**
-     * PRICING TABS + SEARCH (FINAL - SINGLE SOURCE OF TRUTH)
-     * - Search hanya di judul <h3>
-     * - Bisa lintas tab
-     * - Clear (✕) mengembalikan semua card seperti awal
-     * - User tetap bebas klik tab lain walau search aktif
-     */
-    (function () {
-      const searchInput = document.getElementById("pricingSearch");
-      const clearBtn = document.getElementById("pricingSearchClear");
-  
-      const tabs = Array.from(document.querySelectorAll(".tab"));
-      const panes = Array.from(document.querySelectorAll(".pricing[data-pane]"));
-  
-      const norm = (s) => (s || "").trim().toLowerCase();
-  
-      function getActiveTabName() {
-        const active = document.querySelector(".tab.is-active");
-        return active ? active.dataset.tab : (tabs[0]?.dataset.tab || "");
-      }
-  
-      function activateTab(tabName) {
-        tabs.forEach((btn) => {
-          const isActive = btn.dataset.tab === tabName;
-          btn.classList.toggle("is-active", isActive);
-          btn.setAttribute("aria-selected", isActive ? "true" : "false");
-        });
-  
-        panes.forEach((pane) => {
-          const isActive = pane.dataset.pane === tabName;
-          pane.classList.toggle("is-active", isActive);
-          pane.setAttribute("aria-hidden", isActive ? "false" : "true");
-        });
-      }
-  
-      function cardTitleText(card) {
-        const h3 = card.querySelector("h3")?.textContent || "";
-  const muted = card.querySelector(".muted")?.textContent || "";
-  return norm(h3 + " " + muted);
-      }
-  
-      // Empty state per pane (auto-create)
-      function ensureEmptyState(pane) {
-        let empty = pane.querySelector(".pricing-empty");
-        if (!empty) {
-          empty = document.createElement("div");
-          empty.className = "pricing-empty";
-          empty.innerHTML = "Tidak ada hasil di tab ini. Coba kata kunci lain atau pindah tab.";
-          pane.appendChild(empty);
-        }
-        return empty;
-      }
-  
-      function setClearVisible(isVisible) {
-        if (!clearBtn) return;
-        clearBtn.classList.toggle("is-active", isVisible);
-      }
-  
-      // IMPORTANT: reset harus menghapus SEMUA efek filter (class hidden) di SEMUA pane
-      function resetAllCards() {
-        panes.forEach((pane) => {
-          const cards = Array.from(pane.querySelectorAll(".price-card"));
-          cards.forEach((c) => c.classList.remove("is-hidden"));
-  
-          const empty = ensureEmptyState(pane);
-          empty.classList.remove("is-active");
-        });
-      }
-  
-      function filterAllPanes(query) {
-        const counts = {};
-  
-        panes.forEach((pane) => {
-          const paneName = pane.dataset.pane;
-          const cards = Array.from(pane.querySelectorAll(".price-card"));
-          let hits = 0;
-  
-          cards.forEach((card) => {
-            const isMatch = cardTitleText(card).includes(query);
-            card.classList.toggle("is-hidden", !isMatch);
-            if (isMatch) hits++;
-          });
-  
-          counts[paneName] = hits;
-  
-          // reset empty dulu, nanti ditentukan untuk pane aktif saja
-          const empty = ensureEmptyState(pane);
-          empty.classList.remove("is-active");
-        });
-  
-        return counts;
-      }
-  
-      let userOverrideTab = false;
-  
-      function maybeAutoSwitchTab(counts) {
-        const active = getActiveTabName();
-  
-        // kalau user lagi override (habis klik tab), jangan auto-switch
-        if (userOverrideTab) return;
-  
-        // kalau tab aktif masih punya hasil, stay
-        if ((counts[active] || 0) > 0) return;
-  
-        // cari pane dengan hasil terbanyak
-        let bestPane = null;
-        let bestCount = 0;
-        Object.keys(counts).forEach((paneName) => {
-          if (counts[paneName] > bestCount) {
-            bestCount = counts[paneName];
-            bestPane = paneName;
-          }
-        });
-  
-        if (bestPane && bestCount > 0 && bestPane !== active) {
-          activateTab(bestPane);
-        }
-      }
-  
-      function showEmptyIfNeeded(query) {
-        const active = getActiveTabName();
-        const activePane = document.querySelector(`.pricing[data-pane="${active}"]`);
-        if (!activePane) return;
-  
-        const visibleCards = Array.from(activePane.querySelectorAll(".price-card"))
-          .filter((c) => !c.classList.contains("is-hidden"));
-  
-        const empty = ensureEmptyState(activePane);
-        if (query && visibleCards.length === 0) empty.classList.add("is-active");
-        else empty.classList.remove("is-active");
-      }
-  
-      function applySearch(raw) {
-        const query = norm(raw);
-        setClearVisible(!!query);
-  
-        // kalau kosong -> reset total (BALIK KE AWAL)
-        if (!query) {
-          resetAllCards();
-          showEmptyIfNeeded(""); // matikan empty state
-          userOverrideTab = false; // allow autoswitch next time
-          return;
-        }
-  
-        const counts = filterAllPanes(query);
-        maybeAutoSwitchTab(counts);
-        showEmptyIfNeeded(query);
-      }
-  
-      // listeners
-      searchInput?.addEventListener("input", (e) => {
-        userOverrideTab = false; // typing allows autoswitch
-        applySearch(e.target.value);
-      });
-  
-      clearBtn?.addEventListener("click", () => {
-        // Clear harus trigger reset logic yang sama seperti input kosong
-        searchInput.value = "";
-        userOverrideTab = false;
-        applySearch("");
-        searchInput.focus();
-      });
-  
-      searchInput?.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          searchInput.value = "";
-          userOverrideTab = false;
-          applySearch("");
-          searchInput.blur();
-        }
-      });
-  
-      tabs.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          userOverrideTab = true;
-          activateTab(btn.dataset.tab);
-  
-          // tetap apply filter sesuai search sekarang (kalau ada)
-          const current = norm(searchInput?.value);
-          if (current) {
-            filterAllPanes(current);
-            showEmptyIfNeeded(current);
-          } else {
-            resetAllCards();
-            showEmptyIfNeeded("");
-          }
-        });
-      });
-  
-      // init
-      panes.forEach((pane) => {
-        pane.setAttribute("aria-hidden", pane.classList.contains("is-active") ? "false" : "true");
-        ensureEmptyState(pane);
-      });
-  
-      // init state clear button
-      setClearVisible(!!norm(searchInput?.value));
-    })();
-  </script>
-  
-  
+  <!-- Product Detail Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
