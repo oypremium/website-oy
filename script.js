@@ -153,13 +153,13 @@ const modalBody = document.getElementById('modalBody');
 // Product Data
 const productsData = {
   youtube: {
-    name: 'YouTube Premium',
+    name: 'YouTube Premium \ Full Bergaransi \ ',
     icon: 'images/yt.png',
     gradient: 'linear-gradient(135deg, #ffffff 0%, #dd5d5d 100%)',
     desc: 'Nikmati YouTube tanpa iklan dengan kualitas premium. Akses YouTube Music dan download video untuk ditonton offline.',
     plans: [
-      { name: 'FAMHEAD', note: 'Bisa invite 5 member (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 15.000', period: '/bulan', msg: 'YouTube Premium - FAMHEAD (Rp 15K/bulan)' },
-      { name: 'FAMPLAN', note: 'Via invite ( ACC Seller )', price: 'Rp 5.000', period: '/bulan', msg: 'YouTube Premium - FAMPLAN (Rp 5K/bulan)' }
+      { name: 'FAMHEAD', note: 'Bisa invite 5 member (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 50.000', period: '/bulan', msg: 'YouTube Premium - FAMHEAD (Rp 15K/bulan)' },
+      { name: 'FAMPLAN', note: 'Via invite ( ACC Buyer )', price: 'Rp 10.000', period: '/bulan', msg: 'YouTube Premium - FAMPLAN (Rp 5K/bulan)' }
       // { name: 'INDIVIDUAL', note: 'Akun pribadi (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 15.000', period: '/bulan', msg: 'YouTube Premium - INDIVIDUAL (Rp 15K/bulan)' }
     ],
     features: [
