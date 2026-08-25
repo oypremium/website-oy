@@ -663,4 +663,5 @@ document.head.appendChild(modalStyles);
     const active = links.find(a => a.classList.contains("active")) || links[0];
     moveIndicator(active);
   });
+  
 })();
