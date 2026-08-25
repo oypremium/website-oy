@@ -1166,6 +1166,6 @@ body {
 .hero-card::after {
   pointer-events: none;
 }
-.btn-circle shopee {
-  margin-left: 100px;
+.btn-circle.shopee {
+  transform: translateY(-4px); /* Ubah angka -4px sesuai ketinggian yang diinginkan */
 }
