@@ -127,18 +127,9 @@
 
   <main>
     <!-- Hero Banner -->
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-slider-wrapper">
-      
-      <!-- Tombol Navigasi Kiri & Kanan -->
-      <button class="slider-btn prev-btn" onclick="slideHero(-1)" aria-label="Slide Sebelumnya">&#10094;</button>
-      <button class="slider-btn next-btn" onclick="slideHero(1)" aria-label="Slide Selanjutnya">&#10095;</button>
-
-      <div class="hero-slider-track" id="heroTrack">
-        
-        <!-- CARD 1 (Konten Utama) -->
-        <div class="hero-card slide">
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-card">
           <div class="hero-badge">
             <span class="badge-dot"></span>
             Oypremium
@@ -149,78 +140,37 @@
           </h1>
           
           <h3 class="hero-desc">
-            Platform penyedia aplikasi premium & kebutuhan sosial media terpercaya di Indonesia.<br>
-            ✨ Ribuan pesanan sukses terjual di Shopee Oypremium<br>
-            ✨ Order via WhatsApp bisa bayar setelah produk diterima (100% Aman)
+            Platform penyedia aplikasi premium & kebutuhan sosial media paling aman dan terpercaya di indonesia.
           </h3>
     
+          <!-- BUTTON BULAT -->
           <div class="hero-buttons">
-            <!-- WhatsApp -->
-            <a href="https://api.whatsapp.com/send?phone=6289523410422&text=Halo%20OYPREMIUM%2C%20saya%20ingin%20order%20paket."
-               onclick="fbq('track', 'Contact');"
-               class="btn-circle whatsapp"
-               target="_blank"
-               rel="noopener">
-              <img src="images/wa.png" alt="WhatsApp" class="icon-img">
-            </a>
             
-            <!-- Shopee -->
-            <a href="https://s.shopee.co.id/2LXm1Nbdyw"
-               onclick="fbq('track', 'InitiateCheckout');"
-               class="btn-circle shopee"
-               target="_blank"
-               rel="noopener">
-              <img src="images/sh.png" alt="Shopee" class="icon-img2">
-            </a>
-          </div>
-        </div>
+            <!-- WhatsApp -->
+            <div class="hero-buttons">
 
-        <!-- CARD 2 (Isi Konten Baru Anda di Sini) -->
-        <div class="hero-card slide">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            Promo Spesial
-          </div>
-          
-          <h1 class="hero-title">
-            PROMO KILAT <span class="gradient-text">HEMAT</span>
-          </h1>
-          
-          <h3 class="hero-desc">
-            Dapatkan diskon spesial untuk langganan Youtube Premium, Netflix, Spotify, dan lainnya.<br>
-            ⚡ Proses kilat 1-5 menit aktif<br>
-            🛡️ Garansi full masa aktif
-          </h3>
+              <!-- WhatsApp PNG -->
+              <a href="https://api.whatsapp.com/send?phone=6289523410422&text=Halo%20OYPREMIUM%2C%20saya%20ingin%20order%20paket."
+                class="btn-circle whatsapp"
+                target="_blank"
+                rel="noopener">
+                <img src="images/wa.png" alt="WhatsApp" class="icon-img">
+              </a>
+            
+              <!-- Shopee PNG -->
+              <a href="https://s.shopee.co.id/2LXm1Nbdyw"
+                 class="btn-circle shopee"
+                 target="_blank">
+                <img src="images/sh.png" alt="Shopee" class="icon-img2">
+              </a>
+            
+            </div>
+            
     
-          <div class="hero-buttons">
-            <a href="https://api.whatsapp.com/send?phone=6289523410422&text=Halo%20OYPREMIUM%2C%20mau%20tanya%20promo."
-               onclick="fbq('track', 'Contact');"
-               class="btn-circle whatsapp"
-               target="_blank"
-               rel="noopener">
-              <img src="images/wa.png" alt="WhatsApp" class="icon-img">
-            </a>
-            <a href="https://s.shopee.co.id/2LXm1Nbdyw"
-               onclick="fbq('track', 'InitiateCheckout');"
-               class="btn-circle shopee"
-               target="_blank"
-               rel="noopener">
-              <img src="images/sh.png" alt="Shopee" class="icon-img2">
-            </a>
           </div>
         </div>
-
       </div>
-
-      <!-- Titik Indikator Bawah -->
-      <div class="slider-dots" id="sliderDots">
-        <span class="dot active" onclick="currentHeroSlide(0)"></span>
-        <span class="dot" onclick="currentHeroSlide(1)"></span>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
     
 
     <!-- Filter Tabs -->
