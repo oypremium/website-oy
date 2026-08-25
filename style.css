@@ -1166,6 +1166,7 @@ body {
 .hero-card::after {
   pointer-events: none;
 }
-.btn-circle.shopee {
-  transform: translateY(-4px); /* Ubah angka -4px sesuai ketinggian yang diinginkan */
+.icon-img2 {
+  position: relative;
+  top: -4px; /* Menaikkan posisi ikon Shopee */
 }
