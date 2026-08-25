@@ -1166,29 +1166,3 @@ body {
 .hero-card::after {
   pointer-events: none;
 }
-.hero-action-buttons {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Jarak antara logo WA dan Shopee */
-  margin-top: 15px;
-}
-
-.btn-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
-  transition: transform 0.2s ease;
-}
-
-.btn-circle:hover {
-  transform: scale(1.08);
-}
-
-.icon-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
