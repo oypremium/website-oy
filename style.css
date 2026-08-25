@@ -1166,3 +1166,6 @@ body {
 .hero-card::after {
   pointer-events: none;
 }
+.btn-circle shopee {
+  margin-left: 100px;
+}
