@@ -1,598 +1,335 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OYPREMIUM — App Premium & Social Boost Marketplace</title>
-  <meta name="description" content="Platform marketplace #1 untuk App Premium dan Social Boost dengan harga terjangkau, proses cepat, dan bergaransi.">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-
-  fbq('init', '1054156657582810');
-  fbq('track', 'PageView');
-  </script>
-
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1054156657582810&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OyPremium — Aplikasi Premium Termurah &amp; Bergaransi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <!-- Logo -->
-        <a href="#" class="logo">
-          <div class="logo-icon">OY</div>
-          <div class="logo-text">
-            <span class="logo-name">OYPREMIUM</span>
-            <span class="logo-sub">App prem & Kebsos</span>
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-logo">OY</span>
+      <span class="brand-name">Oy<em>Premium</em></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link" data-nav>Home</a>
+      <a href="#apps" class="nav-link" data-nav>Apps</a>
+      <a href="#reviews" class="nav-link" data-nav>Testimoni</a>
+      <a href="#contact" class="nav-link" data-nav>Contact</a>
+      <div class="nav-mobile-search">
+        <input type="text" id="navSearchInput" placeholder="Cari aplikasi...">
+        <button id="navSearchBtn" aria-label="Cari">🔍</button>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Cari aplikasi" title="Cari aplikasi">🔍</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- desktop search dropdown -->
+  <div class="search-dropdown" id="searchDropdown">
+    <div class="search-dropdown-inner">
+      <input type="text" id="topSearchInput" placeholder="Ketik nama aplikasi, misal: Netflix, Canva, CapCut...">
+      <button id="topSearchGo">Cari</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO / CAROUSEL ===== -->
+<section class="hero" id="home">
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="carouselTrack">
+
+      <div class="slide slide-01">
+        <div class="slide-content">
+          <span class="eyebrow">🔥 Promo Peluncuran</span>
+          <h1>Akun Aplikasi Premium,<br>Harga Ramah di Kantong.</h1>
+          <p>Mulai dari Gemini AI Pro (berbagai varian), YouTube Premium, Google Drive 5TB Private, hingga CapCut Pro. Semua original resmi, proses cepat, mudah digunakan, dan full garansi!</p>
+          <div class="slide-actions">
+            <!-- Tombol WhatsApp dengan Logo SVG -->
+            <a href="https://wa.me/6289523410422?text=Halo%20OyPremium%2C%20saya%20mau%20tanya%20produk" target="_blank" rel="noopener" class="btn btn-whatsapp">
+              <svg class="btn-svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.37C9.37 7.37 9.1 7.43 8.88 7.67C8.65 7.92 8.02 8.51 8.02 9.71C8.02 10.91 8.89 12.07 9.01 12.23C9.14 12.4 10.7 14.81 13.09 15.84C13.66 16.09 14.1 16.23 14.45 16.34C15.02 16.53 15.54 16.5 15.95 16.44C16.41 16.37 17.37 15.86 17.57 15.3C17.77 14.73 17.77 14.25 17.71 14.15C17.65 14.05 17.5 13.99 17.26 13.87C17.03 13.75 15.9 13.2 15.69 13.12C15.48 13.05 15.33 13.01 15.17 13.25C15.02 13.48 14.58 14.05 14.45 14.21C14.32 14.37 14.19 14.39 13.96 14.27C13.73 14.15 12.98 13.91 12.09 13.12C11.4 12.5 10.93 11.74 10.8 11.51C10.67 11.28 10.79 11.16 10.9 11.05C11 10.95 11.14 10.77 11.26 10.63C11.38 10.49 11.42 10.39 11.5 10.23C11.58 10.07 11.54 9.93 11.48 9.81C11.42 9.69 10.97 8.58 10.78 8.13C10.6 7.69 10.41 7.75 10.27 7.74C10.14 7.74 9.99 7.74 9.83 7.74C9.68 7.74 9.53 7.37 9.53 7.37Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
+      
+            <!-- Tombol Shopee dengan Logo SVG -->
+            <a href="https://shopee.co.id/oypremium" target="_blank" rel="noopener" class="btn btn-shopee">
+              <svg class="btn-svg-ic shopee-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M19.77 7.23H16.6V5.4C16.6 2.97 14.54 1 12 1S7.4 2.97 7.4 5.4v1.83H4.23C3.55 7.23 3 7.78 3 8.46l1.35 12.18c.07.64.61 1.13 1.25 1.13h12.8c.64 0 1.18-.49 1.25-1.13L21 8.46c0-.68-.55-1.23-1.23-1.23zM9.2 5.4C9.2 3.97 10.45 2.8 12 2.8s2.8 1.17 2.8 2.6v1.83H9.2V5.4zm3.03 13.03c-2.33 0-3.48-1.25-3.52-2.48h1.74c.06.56.66 1.05 1.76 1.05 1.04 0 1.63-.52 1.63-1.19 0-.82-.8-1.07-1.89-1.39-1.52-.45-2.92-1.03-2.92-2.61 0-1.42 1.15-2.42 2.98-2.42 1.94 0 3.08 1.05 3.2 2.37h-1.68c-.09-.54-.6-1-1.5-1-.87 0-1.37.47-1.37 1.03 0 .66.63.93 1.66 1.24 1.69.52 3.15 1.04 3.15 2.76 0 1.61-1.3 2.64-3.24 2.64z"/>
+              </svg>
+              Kunjungi Shopee
+            </a>
           </div>
-        </a>
+        </div>
+      </div>
 
-        <!-- Navigation -->
-        <nav class="nav" id="mainNav">
-          <a href="#home" class="nav-link active">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M2 6.5L9 2L16 6.5V15C16 15.5523 15.5523 16 15 16H3C2.44772 16 2 15.5523 2 15V6.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 16V9H12V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Home
-          </a>
-          <a href="#apps" class="nav-link">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="11" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="2" y="11" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="11" y="11" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-            Apps
-          </a>
-          <a href="#sosmed" class="nav-link">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M16 9C16 12.866 12.866 16 9 16C5.13401 16 2 12.866 2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M9 5V9L12 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            Sosmed
-          </a>
-          <!-- <a href="#cart" class="nav-link">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M2 2H3.5L5.5 14H14.5L16.5 6H4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="6" cy="16" r="1" fill="currentColor"/>
-              <circle cx="14" cy="16" r="1" fill="currentColor"/>
-            </svg>
-            Cart
-          </a> -->
+      <div class="slide slide-02">
+        <div class="slide-content">
+          <span class="eyebrow">⭐ Terpercaya & Terbukti</span>
+          <h1>Terjual Ribuan Pesanan<br>di Shopee OyPremium.</h1>
+          <p>Nggak perlu ragu! Bergabunglah dengan ribuan pelanggan yang sudah membuktikan layanan kami. Transaksi aman, proses kilat, dan pastinya bergaransi full.</p>
+          <div class="slide-actions">
+            <a href="https://shopee.co.id/oypremium" target="_blank" rel="noopener" class="btn btn-shopee">
+              <svg class="btn-svg-ic shopee-svg" viewBox="0 0 24 24" width="20" height="20" fill="#EE4D2D">
+                <path d="M19.77 7.23H16.6V5.4C16.6 2.97 14.54 1 12 1S7.4 2.97 7.4 5.4v1.83H4.23C3.55 7.23 3 7.78 3 8.46l1.35 12.18c.07.64.61 1.13 1.25 1.13h12.8c.64 0 1.18-.49 1.25-1.13L21 8.46c0-.68-.55-1.23-1.23-1.23zM9.2 5.4C9.2 3.97 10.45 2.8 12 2.8s2.8 1.17 2.8 2.6v1.83H9.2V5.4zm3.03 13.03c-2.33 0-3.48-1.25-3.52-2.48h1.74c.06.56.66 1.05 1.76 1.05 1.04 0 1.63-.52 1.63-1.19 0-.82-.8-1.07-1.89-1.39-1.52-.45-2.92-1.03-2.92-2.61 0-1.42 1.15-2.42 2.98-2.42 1.94 0 3.08 1.05 3.2 2.37h-1.68c-.09-.54-.6-1-1.5-1-.87 0-1.37.47-1.37 1.03 0 .66.63.93 1.66 1.24 1.69.52 3.15 1.04 3.15 2.76 0 1.61-1.3 2.64-3.24 2.64z"/>
+              </svg>
+              Cek Review Shopee
+            </a>
+            <a href="#apps" class="btn btn-outline">Lihat Semua Apps</a>
+          </div>
+        </div>
+      </div>
 
-          <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
-        </nav>
+      <div class="slide slide-03">
+  <div class="slide-content">
+    <span class="eyebrow">⚡ Super Kilat</span>
+    <h1>Fast Respon,<br>Proses di Bawah 5 Menit.</h1>
+    <p>Nggak pakai lama! Admin standby dan siap proses pesanan kamu secepat kilat (selalu online kecuali lagi tidur).</p>
+    <div class="slide-actions">
+      <a href="https://wa.me/6289523410422?text=Halo%20Admin%20OyPremium%2C%20mau%20order%20proses%20kilat%20ya" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg class="btn-svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.37C9.37 7.37 9.1 7.43 8.88 7.67C8.65 7.92 8.02 8.51 8.02 9.71C8.02 10.91 8.89 12.07 9.01 12.23C9.14 12.4 10.7 14.81 13.09 15.84C13.66 16.09 14.1 16.23 14.45 16.34C15.02 16.53 15.54 16.5 15.95 16.44C16.41 16.37 17.37 15.86 17.57 15.3C17.77 14.73 17.77 14.25 17.71 14.15C17.65 14.05 17.5 13.99 17.26 13.87C17.03 13.75 15.9 13.2 15.69 13.12C15.48 13.05 15.33 13.01 15.17 13.25C15.02 13.48 14.58 14.05 14.45 14.21C14.32 14.37 14.19 14.39 13.96 14.27C13.73 14.15 12.98 13.91 12.09 13.12C11.4 12.5 10.93 11.74 10.8 11.51C10.67 11.28 10.79 11.16 10.9 11.05C11 10.95 11.14 10.77 11.26 10.63C11.38 10.49 11.42 10.39 11.5 10.23C11.58 10.07 11.54 9.93 11.48 9.81C11.42 9.69 10.97 8.58 10.78 8.13C10.6 7.69 10.41 7.75 10.27 7.74C10.14 7.74 9.99 7.74 9.83 7.74C9.68 7.74 9.53 7.37 9.53 7.37Z"/>
+        </svg>
+        Chat WA Admin
+      </a>
+      <a href="#apps" class="btn btn-outline">Lihat Katalog</a>
+    </div>
+  </div>
+</div>
 
-        <!-- Contact Button -->
-        <button class="btn-contact" data-wa data-msg="Halo OYPREMIUM, saya ingin konsultasi paket.">
-          Hubungi Admin
-        </button>
+<div class="slide slide-04">
+  <div class="slide-content">
+    <span class="eyebrow">💳 100% Aman & Terpercaya</span>
+    <h1>Bayar Setelah Kami Proses,<br>Khusus Order di WhatsApp.</h1>
+    <p>Nggak perlu takut zonk! Semisal beli Gemini Pro, kami proses dulu sampai akunmu benar-benar aktif jadi Pro, baru kamu bayar. Belanja makin tenang dan pasti aman 100%.</p>
+    <div class="slide-actions">
+      <a href="https://wa.me/6289523410422?text=Halo%20Admin%20OyPremium%2C%20saya%20mau%20order%20dengan%20sistem%20bayar%20setelah%20akun%20jadi" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg class="btn-svg-ic" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.37C9.37 7.37 9.1 7.43 8.88 7.67C8.65 7.92 8.02 8.51 8.02 9.71C8.02 10.91 8.89 12.07 9.01 12.23C9.14 12.4 10.7 14.81 13.09 15.84C13.66 16.09 14.1 16.23 14.45 16.34C15.02 16.53 15.54 16.5 15.95 16.44C16.41 16.37 17.37 15.86 17.57 15.3C17.77 14.73 17.77 14.25 17.71 14.15C17.65 14.05 17.5 13.99 17.26 13.87C17.03 13.75 15.9 13.2 15.69 13.12C15.48 13.05 15.33 13.01 15.17 13.25C15.02 13.48 14.58 14.05 14.45 14.21C14.32 14.37 14.19 14.39 13.96 14.27C13.73 14.15 12.98 13.91 12.09 13.12C11.4 12.5 10.93 11.74 10.8 11.51C10.67 11.28 10.79 11.16 10.9 11.05C11 10.95 11.14 10.77 11.26 10.63C11.38 10.49 11.42 10.39 11.5 10.23C11.58 10.07 11.54 9.93 11.48 9.81C11.42 9.69 10.97 8.58 10.78 8.13C10.6 7.69 10.41 7.75 10.27 7.74C10.14 7.74 9.99 7.74 9.83 7.74C9.68 7.74 9.53 7.37 9.53 7.37Z"/>
+        </svg>
+        Chat WA Admin Sekarang
+      </a>
+      <a href="#trust" class="btn btn-outline">Pelajari Sistemnya</a>
+    </div>
+  </div>
+</div>
 
-        <!-- Mobile Toggle -->
-        <button class="mobile-toggle" id="mobileToggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    </div>
+
+    <button class="carousel-arrow arrow-left" id="prevSlide" aria-label="Sebelumnya">&#10094;</button>
+    <button class="carousel-arrow arrow-right" id="nextSlide" aria-label="Berikutnya">&#10095;</button>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="apps-section" id="apps">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">Katalog</span>
+        <h2>Semua Aplikasi Premium</h2>
+        <p class="section-sub">Pilih aplikasi yang kamu butuhkan, harga sudah paling pas.</p>
+      </div>
+      <div class="apps-search">
+        <input type="text" id="productSearch" placeholder="Cari aplikasi, misal: Spotify...">
+        <span class="apps-search-ic">🔍</span>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#home" class="mobile-link active">
-      <!-- icon -->
-      Home
-    </a>
-  
-    <a href="index.html#apps" class="mobile-link">
-      <!-- icon -->
-      Apps
-    </a>
-  
-    <a href="index.html#sosmed" class="mobile-link">
-      <!-- icon -->
-      Sosmed
-    </a>
-  
-    <!-- <a href="index.html#cart" class="mobile-link"> -->
-      <!-- icon -->
-      <!-- Cart
-    </a> -->
+    <div class="products-grid" id="productsGrid"></div>
+    <p class="no-result" id="noResult" hidden>Aplikasi yang kamu cari nggak ketemu. Coba kata kunci lain, atau chat admin langsung ya.</p>
   </div>
-  
+</section>
 
-  <main>
-    <!-- Hero Banner -->
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-slider-wrapper">
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why-section" id="why">
+  <div class="section-inner">
+    <span class="section-eyebrow">Alasan Kami</span>
+    <h2>Kenapa Pilih OyPremium?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-ic">🛡️</div>
+        <h3>Bergaransi</h3>
+        <p>Setiap akun bergaransi sesuai masa aktif. Ada masalah? Tinggal chat, kami bantu selesaikan.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">💸</div>
+        <h3>Harga Termurah</h3>
+        <p>Harga bersaing tanpa mengorbankan kualitas — cocok buat kamu yang mau hemat tapi tetap dapat yang original.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">⚡</div>
+        <h3>Proses Kilat</h3>
+        <p>Order masuk langsung diproses, rata-rata akun terkirim kurang dari 5 menit, Admin standby dan siap proses pesanan kamu secepat kilat (selalu online kecuali lagi tidur).</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">🎧</div>
+        <h3>Support Ramah</h3>
+        <p>Admin fast response dan siap bantu dari pemilihan produk sampai after-sales.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">🔒</div>
+        <h3>Transaksi Aman</h3>
+        <p>Bisa Bayar Setelah Kalian mendaptkan app premiumnya, jadi aman 100%</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">⭐</div>
+        <h3>Dipercaya Ratusan Pembeli</h3>
+        <p>Sudah melayani banyak pelanggan di Shopee dan WhatsApp dengan rating memuaskan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST / COD CARD ===== -->
+<section class="trust-section" id="trust">
+  <div class="section-inner">
+    <div class="trust-card">
+      <div class="trust-badge">✅</div>
+      <div class="trust-text">
+        <span class="section-eyebrow section-eyebrow--light">100% Aman</span>
+        <h2>Bisa Bayar Setelah Kamu Terima Produknya</h2>
+        <p>Kamu nggak perlu khawatir soal penipuan. Chat admin dulu, tanya-tanya produknya, pastikan sesuai kebutuhan kamu — baru deh transfer setelah akun premium kamu terima dan aktif dengan baik.</p>
+      </div>
+      <a href="https://wa.me/6289523410422?text=Halo%20OyPremium%2C%20saya%20mau%20order%20dengan%20sistem%20bayar%20setelah%20terima%20produk" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+        <span class="btn-ic">💬</span> Chat Admin Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testi-section" id="reviews">
+  <div class="section-inner">
+    <div class="section-head text-center">
+      <span class="section-eyebrow">Testimoni</span>
+      <h2>Apa Kata Pelanggan Kami?</h2>
+      <p class="section-sub">Cerita asli dari mereka yang sudah berlangganan hemat & aman di OyPremium.</p>
+    </div>
+
+    <!-- Container Slider Card -->
+    <div class="testi-track">
       
-      <!-- Tombol Navigasi Kiri & Kanan -->
-      <button class="slider-btn prev-btn" onclick="slideHero(-1)" aria-label="Slide Sebelumnya">&#10094;</button>
-      <button class="slider-btn next-btn" onclick="slideHero(1)" aria-label="Slide Selanjutnya">&#10095;</button>
-
-      <div class="hero-slider-track" id="heroTrack">
-        
-        <!-- CARD 1 (Konten Utama) -->
-        <div class="hero-card slide">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            Oypremium
-          </div>
-          
-          <h1 class="hero-title">
-            APP PREMIUM &<span class="gradient-text"> KEBSOS</span>
-          </h1>
-          
-          <h3 class="hero-desc">
-            Platform penyedia aplikasi premium & kebutuhan sosial media terpercaya di Indonesia.<br>
-            ✨ Ribuan pesanan sukses terjual di Shopee Oypremium<br>
-            ✨ Order via WhatsApp bisa bayar setelah produk diterima (100% Aman)
-          </h3>
-    
-          <div class="hero-buttons">
-            <!-- WhatsApp -->
-            <a href="https://api.whatsapp.com/send?phone=6289523410422&text=Halo%20OYPREMIUM%2C%20saya%20ingin%20order%20paket."
-               onclick="fbq('track', 'Contact');"
-               class="btn-circle whatsapp"
-               target="_blank"
-               rel="noopener">
-              <img src="images/wa.png" alt="WhatsApp" class="icon-img">
-            </a>
-            
-            <!-- Shopee -->
-            <a href="https://s.shopee.co.id/2LXm1Nbdyw"
-               onclick="fbq('track', 'InitiateCheckout');"
-               class="btn-circle shopee"
-               target="_blank"
-               rel="noopener">
-              <img src="images/sh.png" alt="Shopee" class="icon-img2">
-            </a>
+      <!-- Card 1 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Awalnya ragu, tapi beneran. Saya pesen gemini ai pro setelah akun gemini saya menjadi PRO baru nanti bayar proses cepet 2menit an saja "</p>
+        <div class="testi-user">
+          <span class="testi-avatar">RN</span>
+          <div>
+            <strong>Rian N.</strong>
+            <small>Gemini AI Pro User</small>
           </div>
         </div>
-
-        <!-- CARD 2 (Isi Konten Baru Anda di Sini) -->
-        <div class="hero-card slide image-only-slide">
-          <img src="images/ss1.jpeg" alt="Screenshot Toko Shopee Oypremium" class="hero-full-img">
-        </div>
-        <!-- CARD 3 (Screenshot Gambar) -->
-        <div class="hero-card slide image-only-slide">
-          <img src="images/ss2.1.jpeg" alt="Screenshot Toko Shopee Oypremium" class="hero-full-img">
-        </div>
-        <!-- CARD 4 (Screenshot Gambar) -->
-        <div class="hero-card slide image-only-slide">
-          <img src="images/wa.jpeg" alt="Screenshot Toko Shopee Oypremium" class="hero-full-img">
-        </div>
-
-        <!-- <div class="hero-card slide">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            Promo Spesial
-          </div>
-          
-          <h1 class="hero-title">
-            PROMO KILAT <span class="gradient-text">HEMAT</span>
-          </h1>
-          
-          <h3 class="hero-desc">
-            Dapatkan diskon spesial untuk langganan Youtube Premium, Netflix, Spotify, dan lainnya.<br>
-            ⚡ Proses kilat 1-5 menit aktif<br>
-            🛡️ Garansi full masa aktif
-          </h3>
-    
-          <div class="hero-buttons">
-            <a href="https://api.whatsapp.com/send?phone=6289523410422&text=Halo%20OYPREMIUM%2C%20mau%20tanya%20promo."
-               onclick="fbq('track', 'Contact');"
-               class="btn-circle whatsapp"
-               target="_blank"
-               rel="noopener">
-              <img src="images/wa.png" alt="WhatsApp" class="icon-img">
-            </a>
-            <a href="https://s.shopee.co.id/2LXm1Nbdyw"
-               onclick="fbq('track', 'InitiateCheckout');"
-               class="btn-circle shopee"
-               target="_blank"
-               rel="noopener">
-              <img src="images/sh.png" alt="Shopee" class="icon-img2">
-            </a>
-          </div>
-        </div> -->
-
       </div>
 
-      <!-- Titik Indikator Bawah -->
-      <div class="slider-dots" id="sliderDots">
-        <span class="dot active" onclick="currentHeroSlide(0)"></span>
-        <span class="dot" onclick="currentHeroSlide(1)"></span>
-        <span class="dot" onclick="currentHeroSlide(2)"></span>
-        <span class="dot" onclick="currentHeroSlide(3)"></span>
+      <!-- Card 2 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Admin fast respon banget ga sampe 5 menit sudah aktif YouTube Premium no iklan lancar jaya."</p>
+        <div class="testi-user">
+          <span class="testi-avatar">DA</span>
+          <div>
+            <strong>Dimas A.</strong>
+            <small>YouTube Premium</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Storage Google Drive 5TB beneran private dan lega banget buat backup File acara saya sebagai PDD. Mantap OyPremium!"</p>
+        <div class="testi-user">
+          <span class="testi-avatar">SK</span>
+          <div>
+            <strong>Siti K.</strong>
+            <small>Google Drive 5TB</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"CapCut Pro aktif tanpa kendala, fitur pro kebuka semua. Sangat ngebantu buat ngonten harian. Recommended! Proses nya gampang"</p>
+        <div class="testi-user">
+          <span class="testi-avatar">BW</span>
+          <div>
+            <strong>Budi W.</strong>
+            <small>CapCut Pro</small>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
-    
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <span class="section-eyebrow">Hubungi Kami</span>
+    <h2>Ada Pertanyaan? Langsung Aja Chat</h2>
+    <p class="section-sub">Tim OyPremium siap bantu kamu tiap hari, 24jam Nonstop Kecuali Tidur.</p>
 
-    <!-- Filter Tabs -->
-    <section class="filter-section">
-      <div class="container">
-        <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">
-            Semua
-          </button>
-          <button class="filter-tab" data-filter="app-prem">
-            🔥 APP PREM
-          </button>
-          <button class="filter-tab" data-filter="kebsos">
-            ⭐ KEBSOS
-          </button>
-         
-        </div>
-
-        <div class="search-box">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <input type="text" id="searchProduct" placeholder="Cari produk...">
-        </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-ic">💬</div>
+        <h3>WhatsApp</h3>
+        <p>+62 895-2341-0422</p>
+        <a href="https://wa.me/6289523410422" target="_blank" rel="noopener" class="btn btn-whatsapp">Chat Sekarang</a>
       </div>
-    </section>
-
-    <!-- Products Grid -->
-    <section class="products" id="apps" >
-      <div class="container">
-        <div class="products-grid" id="productsGrid">
-          
-          <!-- YouTube Premium -->
-          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge bestseller">BEST SELLER</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #ffffff 0%, #dd5d5d 100%);">
-              <img src="images/yt.png" alt="YouTube Premium">
-            </div>
-            <h3 class="product-name">YouTube Premium</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 10.000</div>
-            <button class="product-btn" onclick="showProductDetail('youtube')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Gemini AI -->
-          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge bestseller">BEST SELLER</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #a2c3f6 0%, #e49797 100%);">
-              <img src="images/Ge.png" alt="YouTube Premium">
-            </div>
-            <h3 class="product-name">Gemini AI PRO</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 15.000</div>
-            <button class="product-btn" onclick="showProductDetail('gemini')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Canva Pro -->
-          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge popular">POPULAR</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #00C4CC 0%, #7D2AE8 100%);">
-              🎨
-            </div>
-            <h3 class="product-name">Canva Pro</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 3.000</div>
-            <button class="product-btn" onclick="showProductDetail('canva')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div> -->
-
-          <!-- CapCut Pro -->
-          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge bestseller">BEST SELLER</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #000000 0%, #434343 100%);">
-              ✂️
-            </div>
-            <h3 class="product-name">CapCut Pro</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 14.000</div>
-            <button class="product-btn" onclick="showProductDetail('capcut')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- ChatGPT -->
-          <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge popular">POPULAR</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #10A37F 0%, #087F5B 100%);">
-              <img src="images/ch.png" alt="YouTube Premium">
-            </div>
-            <h3 class="product-name">ChatGPT Business</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 10.000</div>
-            <button class="product-btn" onclick="showProductDetail('chatgpt')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Spotify Premium -->
-          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge new">NEW</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #1DB954 0%, #1AA34A 100%);">
-              🎵
-            </div>
-            <h3 class="product-name">Spotify Premium</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 8.000</div>
-            <button class="product-btn" onclick="showProductDetail('spotify')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div> -->
-
-          <!-- Netflix -->
-          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-icon" style="background: linear-gradient(135deg, #E50914 0%, #B20710 100%);">
-              📺
-            </div>
-            <h3 class="product-name">Netflix Premium</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 25.000</div>
-            <button class="product-btn" onclick="showProductDetail('netflix')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div> -->
-
-          <!-- Disney+ -->
-          <!-- <div class="product-card" data-section="app-prem" data-category="app-prem popular editing">
-            <div class="product-badge new">NEW</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #113CCF 0%, #0E2B8F 100%);">
-              🏰
-            </div>
-            <h3 class="product-name">Disney+ Hotstar</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 15.000</div>
-            <button class="product-btn" onclick="showProductDetail('disney')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div> -->
-
-          <!-- Instagram Followers -->
-          <div class="product-card" data-section="kebsos" data-category="kebsos followers bestseller">
-            <div class="product-badge bestseller">BEST SELLER</div>
-            <div class="product-icon" style="background: linear-gradient(135deg, #ffffff 0%, #857c81 100%);">
-              <img src="images/ig.png" >
-            </div>
-            <h3 class="product-name">Instagram Followers Real Indo</h3>
-            <p class="product-label">MULAI DARI</p>
-            <div class="product-price">Rp 7.000</div>
-            <button class="product-btn" onclick="showProductDetail('instagram')">
-              <span>Lihat Detail</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-
-        </div>
-
-        <!-- No Results -->
-        <div class="no-results" id="noResults">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="2"/>
-            <path d="M40 24V44M40 52V52.02" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <h3>Produk tidak ditemukan</h3>
-          <p>Coba kata kunci lain atau lihat semua produk</p>
-        </div>
-      </div>
-    </section>
-    
-    
-    <!-- Features -->
-    <section class="features">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Kenapa Pilih OYPREMIUM?</h2>
-          <p class="section-desc">Marketplace terpercaya dengan layanan premium dan profesional</p>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">100% Terpercaya</h3>
-            <p class="feature-desc">Garansi full setiap transaksi dengan track record 1000+ pelanggan puas</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Proses Cepat</h3>
-            <p class="feature-desc">Instant delivery untuk app premium, sosmed 1-24 jam dengan update real-time</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon" style="background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L2 7V12C2 17 6 21 12 22C18 21 22 17 22 12V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Harga Terjangkau</h3>
-            <p class="feature-desc">Mulai dari 2K saja dengan kualitas premium dan support 24/7</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-card">
-          <div class="cta-content">
-            <h2 class="cta-title">Siap Upgrade Ke Premium?</h2>
-            <p class="cta-desc">
-              Hubungi kami sekarang dan dapatkan konsultasi gratis untuk paket yang sesuai kebutuhan Anda!
-            </p>
-            <button class="btn-cta" data-wa data-msg="Halo OYPREMIUM, saya ingin konsultasi dan order paket premium!">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M17 9.5C17 13.6421 13.6421 17 9.5 17C8.23539 17 7.04467 16.6693 6 16.0898L2 17L2.91016 13C2.33073 11.9553 2 10.7646 2 9.5C2 5.35786 5.35786 2 9.5 2C13.6421 2 17 5.35786 17 9.5Z" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-              Chat WhatsApp Sekarang
-            </button>
-            <div class="cta-info">
-              <span>⏰ Online 09:00 - 22:00 WIB</span>
-              <span>⚡ Response fast</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="logo">
-            <div class="logo-icon">OY</div>
-            <div class="logo-text">
-              <span class="logo-name">OYPREMIUM</span>
-              
-            </div>
-          </div>
-          <p class="footer-desc">
-            Platform penyedia aplikasi premium & kebutuhan sosial media paling aman dan terpercaya di indonesia.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Produk</h4>
-            <a href="#apps">App Premium</a>
-            <a href="#sosmed">Social Boost</a>
-            <a href="#new">Produk Terbaru</a>
-          </div>
-          <div class="footer-col">
-            <h4>Support</h4>
-            <a href="#">FAQ</a>
-            <a href="#">Hubungi Kami</a>
-            <a href="#">Cara Order</a>
-          </div>
-          <div class="footer-col">
-            <h4>Legal</h4>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Refund Policy</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="year">2024</span> OYPREMIUM. All rights reserved.</p>
-        <p>Made with ❤️ for premium experience</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Product Detail Modal -->
-  <div class="modal" id="productModal">
-    <div class="modal-overlay" onclick="closeModal()"></div>
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      
-      <div class="modal-body" id="modalBody">
-        <!-- Dynamic content -->
+      <div class="contact-card">
+        <div class="contact-ic">🛒</div>
+        <h3>Shopee</h3>
+        <p>Belanja &amp; cek review di toko Shopee resmi kami.</p>
+        <a href="https://shopee.co.id/oypremium" target="_blank" rel="noopener" class="btn btn-shopee">Kunjungi Toko</a>
       </div>
     </div>
   </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-logo">OY</span>
+      <span class="brand-name">Oy<em>Premium</em></span>
+      <p>Toko akun aplikasi premium terpercaya — original, bergaransi, harga bersahabat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <a href="#home">Home</a>
+      <a href="#apps">Apps</a>
+      <a href="#reviews">Testimoni</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <a href="https://wa.me/6289523410422" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://shopee.co.id/oypremium" target="_blank" rel="noopener">Shopee</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> OyPremium. Semua hak dilindungi.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
-
-<script>
-  let currentSlideIndex = 0;
-
-  function updateSlide() {
-    const track = document.getElementById('heroTrack');
-    const slides = document.querySelectorAll('.hero-card.slide');
-    const dots = document.querySelectorAll('.slider-dots .dot');
-    
-    if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
-    if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
-
-    track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentSlideIndex);
-    });
-  }
-
-  function slideHero(step) {
-    currentSlideIndex += step;
-    updateSlide();
-  }
-
-  function currentHeroSlide(index) {
-    currentSlideIndex = index;
-    updateSlide();
-  }
-</script>
 </html>

@@ -1,667 +1,298 @@
-// ========================================
-// OYPREMIUM MARKETPLACE - JavaScript
-// ========================================
+/* =========================================================
+   DATA PRODUK
+   Ganti / tambah item sesuai stok aplikasi kamu.
+========================================================= */
+const WA_NUMBER = "6289523410422"; // Nomor WhatsApp OyPremium
 
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// WhatsApp Admin
-const ADMIN_WA = '6289523410422';
-
-// ========================================
-// WhatsApp Handler
-// ========================================
-function openWhatsApp(message) {
-  const url = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(message)}`;
-  window.open(url, '_blank');
-}
-
-document.querySelectorAll('[data-wa]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const msg = btn.getAttribute('data-msg') || 'Halo OYPREMIUM, saya tertarik dengan layanan Anda.';
-    openWhatsApp(msg);
-  });
-});
-
-// ========================================
-// Mobile Menu Toggle
-// ========================================
-const mobileToggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-mobileToggle.addEventListener('click', () => {
-  mobileToggle.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-});
-
-// Close mobile menu when clicking links
-mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href') || '';
-    const hash = href.includes('#') ? `#${href.split('#')[1]}` : '';
-
-    if (hash) {
-      e.preventDefault();
-      handleNavShortcut(hash);
-      history.replaceState(null, '', hash);
-    }
-    mobileToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
-  });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (mobileMenu.classList.contains('active') && 
-      !mobileMenu.contains(e.target) && 
-      !mobileToggle.contains(e.target)) {
-    mobileToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
+const products = [
+  {
+    name: "Gemini AI Pro 1 Bulan",
+    desc: "1 Bulan Akses Premium, Full Garansi",
+    price: "Rp 18.000",
+    oldPrice: "Rp 20.000",
+    image: "images/Gemini1.png",
+    tag: "Best Seller",
+    shopeeUrl: "https://s.shopee.co.id/2g9NgZaNVO" // Ganti dengan link produk Shopee spesifik
+  },
+  {
+    name: "Gemini AI Pro + VEO 3",
+    desc: "Akses VEO 3, 1000 Credits",
+    price: "Rp 18.000",
+    oldPrice: "Rp 20.000",
+    image: "images/Gemini1.1.png",
+    tag: "Populer",
+    shopeeUrl: "https://s.shopee.co.id/9zvyQ7BFEA"
+  },
+  {
+    name: "Gemini Head Private 1000Flow",
+    desc: "Private 1 Pengguna",
+    price: "Rp 45.000",
+    oldPrice: "Rp 50.000",
+    image: "images/Gemini1.3.png",
+    tag: "Diskon",
+    shopeeUrl: "https://s.shopee.co.id/1gHm5tdrP6"
+  },
+  {
+    name: "Drive 5TB Private",
+    desc: "Paket Sultan 18 Bulan Garansi Penuh",
+    price: "Rp 11.000",
+    oldPrice: null,
+    image: "images/Drive.png",
+    tag: null,
+    shopeeUrl: "https://s.shopee.co.id/5LA8rUz5Zg"
+  },
+  {
+    name: "Youtube Premium",
+    desc: "Bebas Iklan, Putar Latar Belakang, YT Music",
+    price: "Rp 14.000",
+    oldPrice: null,
+    image: "images/Youtube.png",
+    tag: null,
+    shopeeUrl: "https://s.shopee.co.id/2qU3CowtSR"
+  },
+  {
+    name: "Capcut Pro",
+    desc: "Unlock Semua Fitur Pro, Tanpa Watermark",
+    price: "Rp 14.000",
+    oldPrice: "Rp 16.000",
+    image: "images/Macam.png",
+    tag: "Hemat",
+    shopeeUrl: "https://s.shopee.co.id/60R4yfWpZx"
+  },
+  {
+    name: "Gemini AI Pro 3 Bulan",
+    desc: "3 Bulan Akses + 3000 Credits + VEO 3",
+    price: "Rp 45.000",
+    oldPrice: null,
+    image: "images/Gemini1.2.png",
+    tag: null,
+    shopeeUrl: "https://s.shopee.co.id/903REFcGpp"
+  },
+  {
+    name: "Gemini AI Pro 6 Bulan",
+    desc: "6 Bulan Akses Premium Hemat, Full Garansi",
+    price: "Rp 75.000",
+    oldPrice: null,
+    image: "images/Gemini1.4.png",
+    tag: null,
+    shopeeUrl: "https://s.shopee.co.id/6L2g3Oy4A3"
+  },
+  {
+    name: "Gemini AI Pro 12 Bulan",
+    desc: "1 Tahun Penuh Akses AI Pro Resmi",
+    price: "Rp 120.000",
+    oldPrice: "Rp 140.000",
+    image: "images/Gemini1.5.png",
+    tag: "Populer",
+    shopeeUrl: "https://s.shopee.co.id/9KgHcu4r1J"
+  },
+  {
+    name: "Gemini Head 18 Bulan",
+    desc: "Paket Sultan 18 Bulan Garansi Penuh",
+    price: "Rp 240.000",
+    oldPrice: null,
+    image: "images/Gemini1.6.png",
+    tag: null,
+    shopeeUrl: "https://s.shopee.co.id/9zxDk0ZT7e"
   }
-});
+];
 
-// ========================================
-// Product Filter
-// ========================================
-const filterTabs = document.querySelectorAll('.filter-tab');
-const productCards = document.querySelectorAll('.product-card');
-const searchInput = document.getElementById('searchProduct');
-const noResults = document.getElementById('noResults');
+/* =========================================================
+   RENDER PRODUK
+========================================================= */
+const productsGrid = document.getElementById("productsGrid");
+const noResult = document.getElementById("noResult");
 
-function filterProducts(category) {
-  let visibleCount = 0;
-  const searchTerm = searchInput.value.toLowerCase().trim();
-
-  productCards.forEach(card => {
-    const cardCategories = card.getAttribute('data-category').split(' ');
-    const productName = card.querySelector('.product-name').textContent.toLowerCase();
-    
-    const matchesCategory = category === 'all' || cardCategories.includes(category);
-    const matchesSearch = !searchTerm || productName.includes(searchTerm);
-    
-    if (matchesCategory && matchesSearch) {
-      card.style.display = 'block';
-      visibleCount++;
-    } else {
-      card.style.display = 'none';
-    }
-  });
-
-  noResults.style.display = visibleCount === 0 ? 'flex' : 'none';
-}
-
-filterTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    filterTabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    
-    const category = tab.getAttribute('data-filter');
-    filterProducts(category);
-  });
-});
-
-searchInput.addEventListener('input', () => {
-  const activeTab = document.querySelector('.filter-tab.active');
-  const category = activeTab.getAttribute('data-filter');
-  filterProducts(category);
-});
-function activateFilterTab(filterName) {
-  const targetTab = document.querySelector(`.filter-tab[data-filter="${filterName}"]`);
-  if (!targetTab) return;
-
-  targetTab.click();
-}
-
-function scrollToElementWithOffset(target) {
-  if (!target) return;
-
-  const offsetTop = target.offsetTop - 72;
-  window.scrollTo({
-    top: offsetTop,
-    behavior: 'smooth'
-  });
-}
-
-function handleNavShortcut(hash) {
-  const filterSection = document.querySelector('.filter-section');
-
-  if (hash === '#apps') {
-    searchInput.value = '';
-    activateFilterTab('popular');
-    scrollToElementWithOffset(filterSection || document.querySelector('#apps'));
-    return true;
+function renderProducts(list){
+  productsGrid.innerHTML = "";
+  if(list.length === 0){
+    noResult.hidden = false;
+    return;
   }
+  noResult.hidden = true;
 
-  if (hash === '#sosmed') {
-    searchInput.value = '';
-    activateFilterTab('new');
-    scrollToElementWithOffset(filterSection || document.querySelector('#apps'));
-    return true;
-  }
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "product-card";
 
-  return false;
-}
-// ========================================
-// Product Detail Modal
-// ========================================
-const modal = document.getElementById('productModal');
-const modalBody = document.getElementById('modalBody');
+    const message = encodeURIComponent(`Halo OyPremium, saya mau order ${p.name}`);
 
-// Product Data
-const productsData = {
-  youtube: {
-    name: 'YouTube Premium \ Full Bergaransi \ ',
-    icon: 'images/yt.png',
-    gradient: 'linear-gradient(135deg, #ffffff 0%, #dd5d5d 100%)',
-    desc: 'Nikmati YouTube tanpa iklan dengan kualitas premium. Akses YouTube Music dan download video untuk ditonton offline.',
-    plans: [
-      { name: 'FAMHEAD', note: 'Bisa invite 5 member (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 50.000', period: '/bulan', msg: 'YouTube Premium - FAMHEAD (Rp 15K/bulan)' },
-      { name: 'FAMPLAN', note: 'Via invite ( ACC Buyer )', price: 'Rp 10.000', period: '/bulan', msg: 'YouTube Premium - FAMPLAN (Rp 5K/bulan)' }
-      // { name: 'INDIVIDUAL', note: 'Akun pribadi (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 15.000', period: '/bulan', msg: 'YouTube Premium - INDIVIDUAL (Rp 15K/bulan)' }
-    ],
-    features: [
-      'Semua paket dapat ACC dari Oypremium',
-      'Bebas iklan di semua device',
-      'YouTube Music Premium included',
-      'Download untuk offline',
-      'Background play',
-      'Full garansi 1 bulan',
-      'Support fast response'
-    ]
-  },
-  gemini: {
-    name: 'Gemini AI PRO',
-    icon: 'images/Ge.png',
-    gradient: 'linear-gradient(135deg, #a2c3f6 0%, #e49797 100%)',
-    desc: 'AI assistant canggih dari Google untuk membantu pekerjaan, riset, coding, dan creative tasks dengan kemampuan multimodal.',
-    plans: [
-      { name: 'HEAD', note: 'Bisa invite 5 member (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 15.000', period: '/bulan', msg: 'Gemini AI PRO - HEAD (Rp 15K/bulan)' },
-      { name: 'FAMPLAN', note: 'Join via invite (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 6.000', period: '/bulan', msg: 'Gemini AI PRO - FAMPLAN (Rp 6K/bulan)' }
-    ],
-    features: [
-      
-      'Semua paket dapat ACC dari Oypremium',
-      'Penyimpanan Drive 2TB',
-      'VEO 3',
-      'Nano banana',
-      'Private Account',
-      'Full garansi 1 bulan',
-      'Support fast response'
-    ]
-  },
-  canva: {
-    name: 'Canva Pro',
-    icon: '🎨',
-    gradient: 'linear-gradient(135deg, #00C4CC 0%, #7D2AE8 100%)',
-    desc: 'Platform desain grafis #1 dengan jutaan template premium, brand kit, background remover, dan kolaborasi tim.',
-    plans: [
-      { name: 'MONTHLY', note: 'Perpanjang bulanan', price: 'Rp 3.000', period: '/bulan', msg: 'Canva Pro - MONTHLY (Rp 3K/bulan)' }
-    ],
-    features: [
-      '100+ juta premium stock',
-      'Brand Kit & Magic Resize',
-      'Background Remover',
-      'Unlimited storage',
-      'Full garansi 1 bulan',
-      'Tutorial & support'
-    ]
-  },
-  capcut: {
-    name: 'CapCut Pro',
-    icon: '✂️',
-    gradient: 'linear-gradient(135deg, #000000 0%, #434343 100%)',
-    desc: 'Editor video profesional dengan AI-powered features. Perfect untuk content creator TikTok, Instagram, dan YouTube.',
-    plans: [
-      { name: 'MONTHLY', note: 'All features unlocked', price: 'Rp 5.000', period: '/bulan', msg: 'CapCut Pro - MONTHLY (Rp 5K/bulan)' }
-    ],
-    features: [
-      'AI video enhancement',
-      'Advanced editing tools',
-      'Premium transitions & effects',
-      'Export tanpa watermark',
-      'Full garansi 1 bulan',
-      'Support fast response'
-    ]
-  },
-  chatgpt: {
-    name: 'ChatGPT Business',
-    icon: 'images/ch.png',
-    gradient: 'linear-gradient(135deg, #10A37F 0%, #087F5B 100%)',
-    desc: 'AI assistant paling canggih untuk produktivitas, riset, coding, dan creative writing. Powered by GPT-4 Turbo.',
-    plans: [
-      { name: 'HEAD', note: 'Bisa invite 4 member (ACC Seller)', price: 'Rp 30.000', period: '/bulan', msg: 'ChatGPT Business - HEAD (Rp 30K/bulan)' },
-      { name: 'PRIVATE MEMBER', note: 'Private member (Bisa ACC Seller/Buyer \harga tetap sama\)', price: 'Rp 10.000', period: '/bulan', msg: 'ChatGPT Business - PRIVATE MEMBER (Rp 10K/bulan)' }
-    ],
-    features: [
-      
-      'Full garansi 1 bulan',
-      'Support fast response'
-    ]
-  },
-  spotify: {
-    name: 'Spotify Premium',
-    icon: '🎵',
-    gradient: 'linear-gradient(135deg, #1DB954 0%, #1AA34A 100%)',
-    desc: 'Streaming musik premium dengan 100+ juta lagu, podcast, dan audiobook. Bebas iklan dengan kualitas audio terbaik.',
-    plans: [
-      { name: 'MONTHLY', note: 'Personal account', price: 'Rp 8.000', period: '/bulan', msg: 'Spotify Premium - MONTHLY (Rp 8K/bulan)' }
-    ],
-    features: [
-      'Ad-free listening',
-      'Offline download',
-      'High quality audio',
-      '100M+ songs & podcasts',
-      'Full garansi 1 bulan',
-      'Support fast response'
-    ]
-  },
-  netflix: {
-    name: 'Netflix Premium',
-    icon: '📺',
-    gradient: 'linear-gradient(135deg, #E50914 0%, #B20710 100%)',
-    desc: 'Platform streaming film & series terbaik dunia. Konten original berkualitas tinggi dengan subtitle Indonesia.',
-    plans: [
-      { name: 'SHARED', note: '1 profile shared', price: 'Rp 25.000', period: '/bulan', msg: 'Netflix Premium - SHARED (Rp 25K/bulan)' }
-    ],
-    features: [
-      '4K Ultra HD streaming',
-      '4 devices simultaneous',
-      'Unlimited movies & series',
-      'Download untuk offline',
-      'Full garansi 1 bulan',
-      'Login assistance'
-    ]
-  },
-  disney: {
-    name: 'Disney+ Hotstar',
-    icon: '🏰',
-    gradient: 'linear-gradient(135deg, #113CCF 0%, #0E2B8F 100%)',
-    desc: 'Streaming Disney, Pixar, Marvel, Star Wars, dan konten Hotstar Premium. Termasuk live sports dan original series.',
-    plans: [
-      { name: 'MONTHLY', note: 'Premium subscription', price: 'Rp 15.000', period: '/bulan', msg: 'Disney+ Hotstar - MONTHLY (Rp 15K/bulan)' }
-    ],
-    features: [
-      'Disney+ & Hotstar Premium',
-      'Live sports streaming',
-      '4K HDR content',
-      'Download untuk offline',
-      'Full garansi 1 bulan',
-      'Support fast response'
-    ]
-  },
-  instagram: {
-    name: 'Instagram Followers',
-    icon: 'images/ig.png',
-    gradient: 'linear-gradient(135deg, #ffffff 0%, #857c81 100%)',
-    desc: 'Followers real Indonesia dengan sistem follow manual. Bukan bot, bisa like & komen, permanent & bergaransi.',
-    plans: [
-      { name: '20 Followers', note: 'Real Indo • Manual', price: 'Rp 2.000', period: '', msg: 'Instagram Followers - 20 Followers (Rp 2K)' },
-      { name: '50 Followers', note: 'Real Indo • Manual', price: 'Rp 5.000', period: '', msg: 'Instagram Followers - 50 Followers (Rp 5K)' },
-      { name: '100 Followers', note: 'Real Indo • Manual', price: 'Rp 9.000', period: '', msg: 'Instagram Followers - 100 Followers (Rp 9K)' }
-    ],
-    features: [
-      'Akun real Indonesia',
-      'Sistem follow manual',
-      'Bukan bot / web',
-      '100% permanent',
-      'Private account bisa',
-      'Bergaransi & support'
-    ]
-  }
-};
-
-function showProductDetail(productKey) {
-  const product = productsData[productKey];
-  if (!product) return;
-
-  modalBody.innerHTML = `
-    <div class="product-detail">
-      <div class="product-detail-header">
-        <div class="product-detail-png" style="background: ${product.gradient};">
-  ${
-    typeof product.icon === 'string' && product.icon.match(/\.(png|jpe?g|svg|webp)$/i)
-      ? `<img src="${product.icon}" alt="${product.name}" class="detail-icon-img">`
-      : product.icon
-  }
-</div>
-
-        </div>
-        <div>
-          <h2 class="product-detail-name">${product.name}</h2>
-          <p class="product-detail-desc">${product.desc}</p>
-        </div>
+    card.innerHTML = `
+      <div class="product-thumb">
+        ${p.tag ? `<span class="product-badge">${p.tag}</span>` : ""}
+        <img src="${p.image}" alt="${p.name}" class="product-img">
       </div>
-
-      <div class="product-detail-plans">
-        <h3 class="plans-title">Pilih Paket</h3>
-        ${product.plans.map(plan => `
-          <div class="plan-card">
-            <div class="plan-header">
-              <div>
-                <div class="plan-name">${plan.name}</div>
-                <div class="plan-note">${plan.note}</div>
-              </div>
-              <div class="plan-price-box">
-                <div class="plan-price">${plan.price}</div>
-                ${plan.period ? `<div class="plan-period">${plan.period}</div>` : ''}
-              </div>
-            </div>
-            <button class="plan-order-btn" onclick="orderProduct('${plan.msg}')">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M15 9.5C15 12.5376 12.5376 15 9.5 15C7.51046 15 5.75421 13.8707 4.81836 12.2056L2 13L2.79444 10.1816C2.28769 9.35842 2 8.39788 2 7.5C2 4.46243 4.46243 2 7.5 2C10.5376 2 13 4.46243 13 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              <span>Pesan via WhatsApp</span>
-            </button>
+      <div class="product-info">
+        <div class="product-title">${p.name}</div>
+        <div class="product-desc">${p.desc || ""}</div>
+        <div class="product-bottom">
+          <div class="product-price">
+            ${p.price}
+            ${p.oldPrice ? `<small>${p.oldPrice}</small>` : ""}
           </div>
-        `).join('')}
+          <div class="product-actions">
+            <a class="product-buy btn-wa" href="https://wa.me/${WA_NUMBER}?text=${message}" target="_blank" rel="noopener">
+              WA
+            </a>
+            <a class="product-buy btn-shopee" href="${p.shopeeUrl || 'https://shopee.co.id/oypremium'}" target="_blank" rel="noopener">
+              Shopee
+            </a>
+          </div>
+        </div>
       </div>
-
-      <div class="product-detail-features">
-        <h3 class="features-title">✨ Keuntungan</h3>
-        <ul class="features-list">
-          ${product.features.map(feature => `
-            <li>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" fill="#10B981" opacity="0.2"/>
-                <path d="M6 10L9 13L14 8" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <span>${feature}</span>
-            </li>
-          `).join('')}
-        </ul>
-      </div>
-    </div>
-  `;
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function orderProduct(message) {
-  closeModal();
-  openWhatsApp(`Halo OYPREMIUM, saya mau pesan ${message}.`);
-}
-
-// Close modal on Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('active')) {
-    closeModal();
-  }
-});
-
-// ========================================
-// Smooth Scroll
-// ========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    if (this.classList.contains('nav-link') || this.classList.contains('mobile-link')) {
-      return;
-    }
-    const href = this.getAttribute('href');
-    if (href === '#') {
-      e.preventDefault();
-      return;
-    }
-    
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      scrollToElementWithOffset(target);
-    }
+    `;
+    productsGrid.appendChild(card);
   });
+}
+
+renderProducts(products);
+
+/* Search (filter produk) */
+function filterProducts(keyword){
+  const kw = keyword.trim().toLowerCase();
+  const filtered = products.filter(p => 
+    p.name.toLowerCase().includes(kw) || 
+    (p.desc && p.desc.toLowerCase().includes(kw))
+  );
+  renderProducts(filtered);
+}
+
+const productSearch = document.getElementById("productSearch");
+if (productSearch) {
+  productSearch.addEventListener("input", () => filterProducts(productSearch.value));
+}
+
+/* Sinkronkan pencarian dari navbar ke #apps */
+function goToAppsWithSearch(keyword){
+  if (productSearch) {
+    productSearch.value = keyword;
+    filterProducts(keyword);
+  }
+  document.getElementById("apps")?.scrollIntoView({ behavior:"smooth" });
+}
+
+const topSearchInput = document.getElementById("topSearchInput");
+const topSearchGo = document.getElementById("topSearchGo");
+if (topSearchGo && topSearchInput) {
+  topSearchGo.addEventListener("click", () => goToAppsWithSearch(topSearchInput.value));
+  topSearchInput.addEventListener("keydown", e => { if(e.key === "Enter") goToAppsWithSearch(topSearchInput.value); });
+}
+
+const navSearchInput = document.getElementById("navSearchInput");
+const navSearchBtn = document.getElementById("navSearchBtn");
+if (navSearchBtn && navSearchInput) {
+  navSearchBtn.addEventListener("click", () => { goToAppsWithSearch(navSearchInput.value); closeMobileMenu(); });
+  navSearchInput.addEventListener("keydown", e => { if(e.key === "Enter"){ goToAppsWithSearch(navSearchInput.value); closeMobileMenu(); } });
+}
+
+/* =========================================================
+   NAVBAR & HAMBURGER
+========================================================= */
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+function closeMobileMenu(){
+  if (hamburger && navLinks) {
+    hamburger.classList.remove("open", "active");
+    navLinks.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+}
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    hamburger.classList.toggle("open", isOpen);
+    hamburger.classList.toggle("active", isOpen);
+    hamburger.setAttribute("aria-expanded", String(isOpen));
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+}
+
+document.querySelectorAll('[data-nav]').forEach(link => {
+  link.addEventListener("click", () => closeMobileMenu());
 });
 
-// ========================================
-// Initialize
-// ========================================
-window.addEventListener('load', () => {
-  // Initial filter
-  filterProducts('all');
-  
-  console.log('%c OYPREMIUM MARKETPLACE ', 
-    'background: linear-gradient(135deg, #10B981 0%, #1E3A8A 100%); color: white; font-size: 18px; font-weight: bold; padding: 8px 16px; border-radius: 8px;');
-  console.log('%c Premium Digital Services 🚀 ', 
-    'color: #10B981; font-size: 14px; font-weight: 600;');
-});
+/* Search toggle (desktop dropdown) */
+const searchToggle = document.getElementById("searchToggle");
+const searchDropdown = document.getElementById("searchDropdown");
+if (searchToggle && searchDropdown) {
+  searchToggle.addEventListener("click", () => {
+    searchDropdown.classList.toggle("open");
+    if(searchDropdown.classList.contains("open") && topSearchInput) topSearchInput.focus();
+  });
+}
 
-// Add modal styles dynamically
-const modalStyles = document.createElement('style');
-modalStyles.textContent = `
-  .product-detail {
-    padding: 1rem 0;
-  }
+/* =========================================================
+   CAROUSEL
+========================================================= */
+const track = document.getElementById("carouselTrack");
+if (track) {
+  const slides = Array.from(track.children);
+  const dotsWrap = document.getElementById("carouselDots");
+  const prevBtn = document.getElementById("prevSlide");
+  const nextBtn = document.getElementById("nextSlide");
 
-  .product-detail-header {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-  }
+  let current = 0;
+  let autoplayTimer = null;
 
-  .product-detail-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    font-size: 2.5rem;
-    flex-shrink: 0;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .product-detail-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .product-detail-desc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .plans-title,
-  .features-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-  }
-
-  .product-detail-plans {
-    margin-bottom: 2rem;
-  }
-
-  .plan-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  .plan-card:last-child {
-    margin-bottom: 0;
-  }
-
-  .plan-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .plan-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-  }
-
-  .plan-note {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-
-  .plan-price-box {
-    text-align: right;
-  }
-
-  .plan-price {
-    font-size: 1.25rem;
-    font-weight: 800;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .plan-period {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-top: -4px;
-  }
-
-  .plan-order-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.875rem 1.5rem;
-    background: var(--gradient-primary);
-    border: none;
-    border-radius: var(--border-radius-sm);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .plan-order-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
-  }
-
-  .plan-order-btn svg {
-    stroke: currentColor;
-  }
-
-  .features-list {
-    list-style: none;
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  .features-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-secondary);
-    font-size: 15px;
-  }
-
-  .features-list li svg {
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 640px) {
-    .product-detail-header {
-      flex-direction: column;
-    }
-
-    .plan-header {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .plan-price-box {
-      text-align: left;
-    }
-  }
-`;
-document.head.appendChild(modalStyles);
-// ===== NAV ACTIVE + COVER PINDAH =====
-(function () {
-  const nav = document.getElementById("mainNav");
-  const indicator = document.getElementById("navIndicator");
-  const links = Array.from(document.querySelectorAll(".nav-link"));
-
-  if (!nav || !indicator || !links.length) return;
-
-  function moveIndicator(el) {
-    const navRect = nav.getBoundingClientRect();
-    const elRect = el.getBoundingClientRect();
-    const x = elRect.left - navRect.left;
-
-    indicator.style.width = `${elRect.width}px`;
-    indicator.style.transform = `translate(${x}px, -50%)`;
-  }
-
-  function setActive(el) {
-    links.forEach(a => a.classList.remove("active"));
-    el.classList.add("active");
-    moveIndicator(el);
-  }
-
-  // klik -> pindah active + cover pindah + scroll smooth
-  links.forEach(link => {
-    link.addEventListener("click", (e) => {
-      const hash = link.getAttribute("href");
-      if (!hash || !hash.startsWith("#")) return;
-
-      e.preventDefault();
-      setActive(link);
-
-      const handledByShortcut = handleNavShortcut(hash);
-      if (!handledByShortcut) {
-        const target = document.querySelector(hash);
-        scrollToElementWithOffset(target);
-      }
-      history.replaceState(null, "", hash);
+  if (dotsWrap) {
+    dotsWrap.innerHTML = "";
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", `Slide ${i + 1}`);
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsWrap.appendChild(dot);
     });
-  });
+  }
+  const dots = dotsWrap ? Array.from(dotsWrap.children) : [];
 
-  // init pertama kali
-  window.addEventListener("load", () => {
-    // kalau ada hash
-    if (location.hash) {
-      const byHash = links.find(a => a.getAttribute("href") === location.hash);
-     
-      if (byHash) {
-        setActive(byHash);
+  function updateSlide(){
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  }
 
-        if (!handleNavShortcut(location.hash)) {
-          const target = document.querySelector(location.hash);
-          scrollToElementWithOffset(target);
-        }
+  function goToSlide(i){
+    current = (i + slides.length) % slides.length;
+    updateSlide();
+    resetAutoplay();
+  }
 
-        return;
-      }
+  function nextSlide(){ goToSlide(current + 1); }
+  function prevSlide(){ goToSlide(current - 1); }
+
+  if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+  if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+
+  function startAutoplay(){ autoplayTimer = setInterval(nextSlide, 5000); }
+  function resetAutoplay(){ clearInterval(autoplayTimer); startAutoplay(); }
+
+  startAutoplay();
+
+  const carousel = document.getElementById("carousel");
+  if (carousel) {
+    carousel.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
+    carousel.addEventListener("mouseleave", startAutoplay);
+  }
+
+  /* Swipe Touch */
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener("touchstart", e => { touchStartX = e.changedTouches[0].screenX; }, { passive:true });
+  track.addEventListener("touchend", e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if(Math.abs(diff) > 40){
+      diff > 0 ? nextSlide() : prevSlide();
     }
+  }, { passive:true });
+}
 
-    // default: yang sudah active, kalau tidak ada -> link pertama
-    const active = links.find(a => a.classList.contains("active")) || links[0];
-    setActive(active);
-  });
-
-  // biar tetap pas kalau resize
-  window.addEventListener("resize", () => {
-    const active = links.find(a => a.classList.contains("active")) || links[0];
-    moveIndicator(active);
-  });
-  
-})();
+/* =========================================================
+   FOOTER YEAR
+========================================================= */
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
