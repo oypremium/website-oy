@@ -296,3 +296,24 @@ if (track) {
 ========================================================= */
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* =========================================================
+   META PIXEL EVENT TRACKING (WA & SHOPEE)
+========================================================= */
+document.addEventListener('click', function (e) {
+  // 1. Cek Klik WhatsApp (Kartu Produk & Hero) -> Event Contact
+  const waTarget = e.target.closest('.btn-wa') || e.target.closest('a[href*="wa.me"]');
+  if (waTarget) {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact');
+    }
+  }
+
+  // 2. Cek Klik Shopee (Kartu Produk & Hero) -> Event ViewContent
+  const shopeeTarget = e.target.closest('.btn-shopee') || e.target.closest('a[href*="shopee.co.id"]');
+  if (shopeeTarget) {
+    if (typeof fbq === 'function') {
+      fbq('track', 'ViewContent');
+    }
+  }
+});
